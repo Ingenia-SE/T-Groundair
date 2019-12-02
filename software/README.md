@@ -1,2 +1,2 @@
-# T-Groundair SOftware Folder
+# T-Groundair Software Folder
 The INGENIA-SE Drone Challenge 2019-2020
