@@ -1,0 +1,5 @@
+swarm_robotics
+/home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel/.private/swarm_robotics/cmake.lock /home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel/./cmake.lock
+/home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel/.private/swarm_robotics/share/swarm_robotics/cmake/swarm_roboticsConfig-version.cmake /home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel/share/swarm_robotics/cmake/swarm_roboticsConfig-version.cmake
+/home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel/.private/swarm_robotics/share/swarm_robotics/cmake/swarm_roboticsConfig.cmake /home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel/share/swarm_robotics/cmake/swarm_roboticsConfig.cmake
+/home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel/.private/swarm_robotics/lib/pkgconfig/swarm_robotics.pc /home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel/lib/pkgconfig/swarm_robotics.pc
