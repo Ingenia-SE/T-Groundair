@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:Blocks="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Blocks" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ http://www.eclipse.org/papyrus/sysml/1.4/SysML/Blocks http://www.eclipse.org/papyrus/sysml/1.4/SysML#//blocks">
   <uml:Model xmi:id="_zIzfQCphEeqPi4A2GyO_zw" name="ISE_DC_2019_MODEL" visibility="public">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_zP4-sCphEeqPi4A2GyO_zw">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -225,9 +225,139 @@ EXCEPT The UAV that should first GO HOME&#xD;
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_5UYbQCpiEeqZ_MKDNlQ9FQ" name="UAV">
         <packagedElement xmi:type="uml:Package" xmi:id="_SyCSoCppEeqZ_MKDNlQ9FQ" name="Software"/>
-        <packagedElement xmi:type="uml:Package" xmi:id="_SyC5sCppEeqZ_MKDNlQ9FQ" name="Specific use cases"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_SyC5sCppEeqZ_MKDNlQ9FQ" name="Specific use cases">
+          <packagedElement xmi:type="uml:Package" xmi:id="__jxqoGwqEeqd9vs4cjN8oA" name="Normal functioning">
+            <packagedElement xmi:type="uml:Activity" xmi:id="_RZ2UUGwrEeqd9vs4cjN8oA" name="Normal functioning" node="_X6v74GwzEeqd9vs4cjN8oA _oOcz4GwzEeqd9vs4cjN8oA _sEL54Gw0Eeqd9vs4cjN8oA _vgPxEGw0Eeqd9vs4cjN8oA _z3lkwGw0Eeqd9vs4cjN8oA _YfnRkGw1Eeqd9vs4cjN8oA _bv5WkGw1Eeqd9vs4cjN8oA _9LxbAGw2Eeqd9vs4cjN8oA _B0RQIGw3Eeqd9vs4cjN8oA">
+              <edge xmi:type="uml:ControlFlow" xmi:id="_jC6RMGw1Eeqd9vs4cjN8oA" target="_oOcz4GwzEeqd9vs4cjN8oA" source="_X6v74GwzEeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_Aonx0Gw2Eeqd9vs4cjN8oA" target="_sEL54Gw0Eeqd9vs4cjN8oA" source="_oOcz4GwzEeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_DkZmcGw2Eeqd9vs4cjN8oA" target="_vgPxEGw0Eeqd9vs4cjN8oA" source="_sEL54Gw0Eeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_VD6xUGw2Eeqd9vs4cjN8oA" target="_YfnRkGw1Eeqd9vs4cjN8oA" source="_vgPxEGw0Eeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_gURrQGw2Eeqd9vs4cjN8oA" target="_bv5WkGw1Eeqd9vs4cjN8oA" source="_YfnRkGw1Eeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_lQE24Gw2Eeqd9vs4cjN8oA" target="_46HDcGw0Eeqd9vs4cjN8oA" source="_xyvYIGw0Eeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_ctptYGw3Eeqd9vs4cjN8oA" target="_xGpjoGwzEeqd9vs4cjN8oA" source="_B0RQIGw3Eeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_lgOWQGw3Eeqd9vs4cjN8oA" target="_9LxbAGw2Eeqd9vs4cjN8oA" source="_gxAOEGw3Eeqd9vs4cjN8oA"/>
+              <node xmi:type="uml:InitialNode" xmi:id="_X6v74GwzEeqd9vs4cjN8oA" name="Normal functioning" outgoing="_jC6RMGw1Eeqd9vs4cjN8oA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_oOcz4GwzEeqd9vs4cjN8oA" name="UAV ON/STAND BY" incoming="_jC6RMGw1Eeqd9vs4cjN8oA" outgoing="_Aonx0Gw2Eeqd9vs4cjN8oA">
+                <inputValue xmi:type="uml:ActionInputPin" xmi:id="_xGpjoGwzEeqd9vs4cjN8oA" name="UAV FLY ORDER" incoming="_ctptYGw3Eeqd9vs4cjN8oA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xGucIGwzEeqd9vs4cjN8oA" value="1"/>
+                </inputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_sEL54Gw0Eeqd9vs4cjN8oA" name="UAV FLY" incoming="_Aonx0Gw2Eeqd9vs4cjN8oA" outgoing="_DkZmcGw2Eeqd9vs4cjN8oA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_vgPxEGw0Eeqd9vs4cjN8oA" name="TAKE IMAGE" incoming="_DkZmcGw2Eeqd9vs4cjN8oA" outgoing="_VD6xUGw2Eeqd9vs4cjN8oA">
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_xyvYIGw0Eeqd9vs4cjN8oA" name="Image taken" outgoing="_lQE24Gw2Eeqd9vs4cjN8oA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xyvYIWw0Eeqd9vs4cjN8oA" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_z3lkwGw0Eeqd9vs4cjN8oA" name="SEND DATA">
+                <inputValue xmi:type="uml:ActionInputPin" xmi:id="_46HDcGw0Eeqd9vs4cjN8oA" name="Image" incoming="_lQE24Gw2Eeqd9vs4cjN8oA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_46NKEGw0Eeqd9vs4cjN8oA" value="1"/>
+                </inputValue>
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_gxAOEGw3Eeqd9vs4cjN8oA" name="Data" outgoing="_lgOWQGw3Eeqd9vs4cjN8oA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_gxAOEWw3Eeqd9vs4cjN8oA" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_YfnRkGw1Eeqd9vs4cjN8oA" name="UAV HOME" incoming="_VD6xUGw2Eeqd9vs4cjN8oA" outgoing="_gURrQGw2Eeqd9vs4cjN8oA"/>
+              <node xmi:type="uml:FlowFinalNode" xmi:id="_bv5WkGw1Eeqd9vs4cjN8oA" name="UAV OFF" incoming="_gURrQGw2Eeqd9vs4cjN8oA"/>
+              <node xmi:type="uml:ActivityParameterNode" xmi:id="_9LxbAGw2Eeqd9vs4cjN8oA" name="OUTPUT TO SERVER" incoming="_lgOWQGw3Eeqd9vs4cjN8oA">
+                <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9LxbAWw2Eeqd9vs4cjN8oA" value="1"/>
+              </node>
+              <node xmi:type="uml:ActivityParameterNode" xmi:id="_B0RQIGw3Eeqd9vs4cjN8oA" name="INPUT FROM SERVER" outgoing="_ctptYGw3Eeqd9vs4cjN8oA">
+                <upperBound xmi:type="uml:LiteralInteger" xmi:id="_B0RQIWw3Eeqd9vs4cjN8oA" value="1"/>
+              </node>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_B550gGwrEeqd9vs4cjN8oA" name="Emergency operation">
+            <packagedElement xmi:type="uml:Activity" xmi:id="_VfWxIGwrEeqd9vs4cjN8oA" name="Emercency Operation" node="_Wk0LEGwwEeqd9vs4cjN8oA _k7zewGwwEeqd9vs4cjN8oA _5Pv5EGwwEeqd9vs4cjN8oA _U7lG8GwxEeqd9vs4cjN8oA">
+              <edge xmi:type="uml:ControlFlow" xmi:id="_KeYvUGwxEeqd9vs4cjN8oA" target="_k7zewGwwEeqd9vs4cjN8oA" source="_Wk0LEGwwEeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_NeN9gGwxEeqd9vs4cjN8oA" target="_5Pv5EGwwEeqd9vs4cjN8oA" source="_k7zewGwwEeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_ctI-wGwxEeqd9vs4cjN8oA" target="_U7lG8GwxEeqd9vs4cjN8oA" source="_k7zewGwwEeqd9vs4cjN8oA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="__7jNQGwxEeqd9vs4cjN8oA" target="_5Pv5EGwwEeqd9vs4cjN8oA" source="_U7lG8GwxEeqd9vs4cjN8oA"/>
+              <node xmi:type="uml:InitialNode" xmi:id="_Wk0LEGwwEeqd9vs4cjN8oA" name="Emergency" outgoing="_KeYvUGwxEeqd9vs4cjN8oA"/>
+              <node xmi:type="uml:DecisionNode" xmi:id="_k7zewGwwEeqd9vs4cjN8oA" name="DecisionNode2" incoming="_KeYvUGwxEeqd9vs4cjN8oA" outgoing="_NeN9gGwxEeqd9vs4cjN8oA _ctI-wGwxEeqd9vs4cjN8oA"/>
+              <node xmi:type="uml:FlowFinalNode" xmi:id="_5Pv5EGwwEeqd9vs4cjN8oA" name="UAV OFF" incoming="_NeN9gGwxEeqd9vs4cjN8oA __7jNQGwxEeqd9vs4cjN8oA"/>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_U7lG8GwxEeqd9vs4cjN8oA" name="UAV HOME" incoming="_ctI-wGwxEeqd9vs4cjN8oA" outgoing="__7jNQGwxEeqd9vs4cjN8oA"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_SyC5sSppEeqZ_MKDNlQ9FQ" name="Specific requirements"/>
-        <packagedElement xmi:type="uml:Package" xmi:id="_SyDgwCppEeqZ_MKDNlQ9FQ" name="Hardware"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_SyDgwCppEeqZ_MKDNlQ9FQ" name="Hardware">
+          <packagedElement xmi:type="uml:Class" xmi:id="_Sa_YgGw8Eeqd9vs4cjN8oA" name="Drone"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_V3q6wGw8Eeqd9vs4cjN8oA" name="Upper body shell">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_csCVEmw9Eeqd9vs4cjN8oA" name="battery compartment" type="_qeNg8Gw8Eeqd9vs4cjN8oA" aggregation="composite" association="_csBuAGw9Eeqd9vs4cjN8oA">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_csCVE2w9Eeqd9vs4cjN8oA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_csC8IGw9Eeqd9vs4cjN8oA" value="1"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_eLeHg2w9Eeqd9vs4cjN8oA" name="positioning system" type="_2GE78Gw8Eeqd9vs4cjN8oA" aggregation="composite" association="_eLeHgGw9Eeqd9vs4cjN8oA">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eLeukGw9Eeqd9vs4cjN8oA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eLeukWw9Eeqd9vs4cjN8oA" value="1"/>
+            </ownedAttribute>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_YDLwEGw8Eeqd9vs4cjN8oA" name="Landing Gear"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_bEN4IGw8Eeqd9vs4cjN8oA" name="Engines"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_fSw8MGw8Eeqd9vs4cjN8oA" name="Propellers"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_ib_W8Gw8Eeqd9vs4cjN8oA" name="Camera"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_qeNg8Gw8Eeqd9vs4cjN8oA" name="Battery compartment">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_njrNAmw9Eeqd9vs4cjN8oA" name="battery" type="_j34QsGw9Eeqd9vs4cjN8oA" association="_njql8Gw9Eeqd9vs4cjN8oA">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_njrNA2w9Eeqd9vs4cjN8oA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_njrNBGw9Eeqd9vs4cjN8oA" value="1"/>
+            </ownedAttribute>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_2GE78Gw8Eeqd9vs4cjN8oA" name="Positioning system"/>
+          <packagedElement xmi:type="uml:Association" xmi:id="_84MI8Gw8Eeqd9vs4cjN8oA" memberEnd="_84MI82w8Eeqd9vs4cjN8oA _84MI9Gw8Eeqd9vs4cjN8oA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_84MI8Ww8Eeqd9vs4cjN8oA" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_84MI8mw8Eeqd9vs4cjN8oA" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_84MI82w8Eeqd9vs4cjN8oA" name="engines" type="_bEN4IGw8Eeqd9vs4cjN8oA" aggregation="composite" association="_84MI8Gw8Eeqd9vs4cjN8oA"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_84MI9Gw8Eeqd9vs4cjN8oA" name="drone" type="_Sa_YgGw8Eeqd9vs4cjN8oA" association="_84MI8Gw8Eeqd9vs4cjN8oA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_9ePcUGw8Eeqd9vs4cjN8oA" memberEnd="_9ePcU2w8Eeqd9vs4cjN8oA _9ePcVGw8Eeqd9vs4cjN8oA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9ePcUWw8Eeqd9vs4cjN8oA" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9ePcUmw8Eeqd9vs4cjN8oA" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_9ePcU2w8Eeqd9vs4cjN8oA" name="landing gear" type="_YDLwEGw8Eeqd9vs4cjN8oA" aggregation="composite" association="_9ePcUGw8Eeqd9vs4cjN8oA"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_9ePcVGw8Eeqd9vs4cjN8oA" name="drone" type="_Sa_YgGw8Eeqd9vs4cjN8oA" association="_9ePcUGw8Eeqd9vs4cjN8oA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_90pxMGw8Eeqd9vs4cjN8oA" memberEnd="_90pxM2w8Eeqd9vs4cjN8oA _90pxNGw8Eeqd9vs4cjN8oA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_90pxMWw8Eeqd9vs4cjN8oA" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_90pxMmw8Eeqd9vs4cjN8oA" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_90pxM2w8Eeqd9vs4cjN8oA" name="upper body shell" type="_V3q6wGw8Eeqd9vs4cjN8oA" aggregation="composite" association="_90pxMGw8Eeqd9vs4cjN8oA"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_90pxNGw8Eeqd9vs4cjN8oA" name="drone" type="_Sa_YgGw8Eeqd9vs4cjN8oA" association="_90pxMGw8Eeqd9vs4cjN8oA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_-2dzgGw8Eeqd9vs4cjN8oA" memberEnd="_-2eakmw8Eeqd9vs4cjN8oA _-2eak2w8Eeqd9vs4cjN8oA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-2eakGw8Eeqd9vs4cjN8oA" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-2eakWw8Eeqd9vs4cjN8oA" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_-2eakmw8Eeqd9vs4cjN8oA" name="propellers" type="_fSw8MGw8Eeqd9vs4cjN8oA" aggregation="composite" association="_-2dzgGw8Eeqd9vs4cjN8oA"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_-2eak2w8Eeqd9vs4cjN8oA" name="drone" type="_Sa_YgGw8Eeqd9vs4cjN8oA" association="_-2dzgGw8Eeqd9vs4cjN8oA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="__MfG0Gw8Eeqd9vs4cjN8oA" memberEnd="__MfG02w8Eeqd9vs4cjN8oA __MfG1Gw8Eeqd9vs4cjN8oA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__MfG0Ww8Eeqd9vs4cjN8oA" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__MfG0mw8Eeqd9vs4cjN8oA" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="__MfG02w8Eeqd9vs4cjN8oA" name="camera" type="_ib_W8Gw8Eeqd9vs4cjN8oA" aggregation="composite" association="__MfG0Gw8Eeqd9vs4cjN8oA"/>
+            <ownedEnd xmi:type="uml:Property" xmi:id="__MfG1Gw8Eeqd9vs4cjN8oA" name="drone" type="_Sa_YgGw8Eeqd9vs4cjN8oA" association="__MfG0Gw8Eeqd9vs4cjN8oA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_csBuAGw9Eeqd9vs4cjN8oA" memberEnd="_csCVEmw9Eeqd9vs4cjN8oA _csC8IWw9Eeqd9vs4cjN8oA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_csCVEGw9Eeqd9vs4cjN8oA" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_csCVEWw9Eeqd9vs4cjN8oA" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_csC8IWw9Eeqd9vs4cjN8oA" name="upper body shell" type="_V3q6wGw8Eeqd9vs4cjN8oA" association="_csBuAGw9Eeqd9vs4cjN8oA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_eLeHgGw9Eeqd9vs4cjN8oA" memberEnd="_eLeHg2w9Eeqd9vs4cjN8oA _eLeukmw9Eeqd9vs4cjN8oA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eLeHgWw9Eeqd9vs4cjN8oA" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_eLeHgmw9Eeqd9vs4cjN8oA" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_eLeukmw9Eeqd9vs4cjN8oA" name="upper body shell" type="_V3q6wGw8Eeqd9vs4cjN8oA" association="_eLeHgGw9Eeqd9vs4cjN8oA"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_j34QsGw9Eeqd9vs4cjN8oA" name="Battery"/>
+          <packagedElement xmi:type="uml:Association" xmi:id="_njql8Gw9Eeqd9vs4cjN8oA" memberEnd="_njrNAmw9Eeqd9vs4cjN8oA _njr0EGw9Eeqd9vs4cjN8oA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_njrNAGw9Eeqd9vs4cjN8oA" source="org.eclipse.papyrus">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_njrNAWw9Eeqd9vs4cjN8oA" key="nature" value="UML_Nature"/>
+            </eAnnotations>
+            <ownedEnd xmi:type="uml:Property" xmi:id="_njr0EGw9Eeqd9vs4cjN8oA" name="battery compartment" type="_qeNg8Gw8Eeqd9vs4cjN8oA" association="_njql8Gw9Eeqd9vs4cjN8oA"/>
+          </packagedElement>
+        </packagedElement>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_gHUZECpmEeqZ_MKDNlQ9FQ" name="Simulation"/>
@@ -307,4 +437,13 @@ EXCEPT The UAV that should first GO HOME&#xD;
     </profileApplication>
   </uml:Model>
   <ActionLanguage:TextualRepresentation xmi:id="_lp6rsGd_EeqOXdz_QjVZ1A" base_Comment="_lpktcGd_EeqOXdz_QjVZ1A" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+  <Blocks:Block xmi:id="_ScIoAGw8Eeqd9vs4cjN8oA" base_Class="_Sa_YgGw8Eeqd9vs4cjN8oA"/>
+  <Blocks:Block xmi:id="_V3waUGw8Eeqd9vs4cjN8oA" base_Class="_V3q6wGw8Eeqd9vs4cjN8oA"/>
+  <Blocks:Block xmi:id="_YDLwEWw8Eeqd9vs4cjN8oA" base_Class="_YDLwEGw8Eeqd9vs4cjN8oA"/>
+  <Blocks:Block xmi:id="_bEN4IWw8Eeqd9vs4cjN8oA" base_Class="_bEN4IGw8Eeqd9vs4cjN8oA"/>
+  <Blocks:Block xmi:id="_fSw8MWw8Eeqd9vs4cjN8oA" base_Class="_fSw8MGw8Eeqd9vs4cjN8oA"/>
+  <Blocks:Block xmi:id="_icCaQGw8Eeqd9vs4cjN8oA" base_Class="_ib_W8Gw8Eeqd9vs4cjN8oA"/>
+  <Blocks:Block xmi:id="_qeNg8Ww8Eeqd9vs4cjN8oA" base_Class="_qeNg8Gw8Eeqd9vs4cjN8oA"/>
+  <Blocks:Block xmi:id="_2GE78Ww8Eeqd9vs4cjN8oA" base_Class="_2GE78Gw8Eeqd9vs4cjN8oA"/>
+  <Blocks:Block xmi:id="_j37UAGw9Eeqd9vs4cjN8oA" base_Class="_j34QsGw9Eeqd9vs4cjN8oA"/>
 </xmi:XMI>
