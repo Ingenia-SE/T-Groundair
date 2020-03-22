@@ -17,6 +17,8 @@ class Quadricopter():
     def __init__(self, name):
         # Name Robot
         self.robot = name
+        # flag to see if it's ready
+        self.start = 0
         # Parameters Parcles
         self.pParam = 2
         self.iParam = 0
@@ -37,8 +39,15 @@ class Quadricopter():
         self.frontImage = []
         self.frongimg = []
 
-    def control_quadricopter(self, odom_base_pub, odom_targetObj_pub, odom_heli_pub, odom_matrix_pub):
-        """Follow the line using the IR sensors under the robot."""
+    def control_quadricopter(self, odom_base_pub, odom_heli_pub, odom_matrix_pub):
+        self.current_pose = odom_base_pub
+
+        if self.start == 0:
+            self.hovering()
+            self.start = 1
+
+        odom_targetObj_pub = self.odom_targetObj_pub
+
         # Vertical control:
         targetPos = [odom_targetObj_pub.pose.pose.position.x, odom_targetObj_pub.pose.pose.position.y,
                      odom_targetObj_pub.pose.pose.position.z]
@@ -67,8 +76,8 @@ class Quadricopter():
         betaCorr = -0.25 * betaE - 2.1 * (betaE - self.pBetaE)
         self.pAlphaE = alphaE
         self.pBetaE = betaE
-        alphaCorr = alphaCorr + sp[1] * 0.005 + 1 * (sp[1] - self.psp2)
-        betaCorr = betaCorr - sp[0] * 0.005 - 1 * (sp[0] - self.psp1)
+        alphaCorr = alphaCorr + sp[1] * 0.0005 + 1 * (sp[1] - self.psp2)
+        betaCorr = betaCorr - sp[0] * 0.0005 - 1 * (sp[0] - self.psp1)
         self.psp2 = sp[1]
         self.psp1 = sp[0]
 
@@ -86,10 +95,12 @@ class Quadricopter():
         self.particleVelocity[3] = thrust * (1 + alphaCorr + betaCorr - rotCorr)
 
         # Never publish after the node has been shut down
+
         if not rospy.is_shutdown():
             # Actually publish the message
             for x in range(0, 4):
                 self.set_speed(self.particleVelocity, x)
+
 
     def set_speed(self, particleVelocity, x):
         # Set particle velocity with a Float32 topic
@@ -135,6 +146,40 @@ class Quadricopter():
         for x in range(0, 4):
             self.set_speed([0, 0, 0, 0], x)
 
+    def set_target(self, target_pose, target_orientation):
+        #Create message
+        self.odom_targetObj_pub = Odometry()
+        current_time = rospy.Time.now()
+        self.odom_targetObj_pub.header.stamp = current_time
+        self.odom_targetObj_pub.header.frame_id = "odom_target_pose"
+        # set the position
+        self.odom_targetObj_pub.pose.pose.position.x = target_pose[0]
+        self.odom_targetObj_pub.pose.pose.position.y = target_pose[1]
+        self.odom_targetObj_pub.pose.pose.position.z = target_pose[2]
+        #set the orientation
+        self.odom_targetObj_pub.pose.pose.orientation.x = target_orientation[0]
+        self.odom_targetObj_pub.pose.pose.orientation.y = target_orientation[1]
+        self.odom_targetObj_pub.pose.pose.orientation.z = target_orientation[2]
+
+    def take_off(self, z):
+        #define target
+        target_pose = [self.current_pose.pose.pose.position.x, self.current_pose.pose.pose.position.y, z]
+        target_orientation = [self.current_pose.pose.pose.orientation.x, self.current_pose.pose.pose.orientation.y, self.current_pose.pose.pose.orientation.z]
+        self.set_target(target_pose, target_orientation)
+
+    def land(self):
+
+        target_pose = [self.current_pose.pose.pose.position.x, self.current_pose.pose.pose.position.y, 0]
+        target_orientation = [self.current_pose.pose.pose.orientation.x, self.current_pose.pose.pose.orientation.y, self.current_pose.pose.pose.orientation.z]
+        self.set_target(target_pose, target_orientation)
+
+    def hovering(self):
+        #define target
+        target_pose = [self.current_pose.pose.pose.position.x, self.current_pose.pose.pose.position.y, self.current_pose.pose.pose.position.z]
+        target_orientation = [self.current_pose.pose.pose.orientation.x, self.current_pose.pose.pose.orientation.y, self.current_pose.pose.pose.orientation.z]
+        self.set_target(target_pose, target_orientation)
+
+
     def initialize(self):
         """Initialize the sample node."""
         global pub_velPropeller1
@@ -148,18 +193,18 @@ class Quadricopter():
         # Give some feedback in the terminal
         rospy.loginfo("Swarm Robotics node initialization")
 
-        # Subscribe to and synchronise parameters the robot
+         # Subscribe to and synchronise parameters the robot
         odom_base_pub = message_filters.Subscriber("odom_base" + self.robot, Odometry)
-        odom_targetObj_pub = message_filters.Subscriber("odom_targetObj" + self.robot, Odometry)
         odom_heli_pub = message_filters.Subscriber("odom_heli" + self.robot, Odometry)
         odom_matrix_pub = message_filters.Subscriber("odom_matrix_pub" + self.robot, Odometry)
+        #odom_targetObj_pub = message_filters.Subscriber("odom_targetObj" + self.robot, Odometry)
 
         # Vision Sensor
         frontVision_sensor = message_filters.Subscriber("frontVision_sensor" + self.robot, Image)
 
         # Wait for all topics to arrive before calling the callback
         ts_control = message_filters.TimeSynchronizer(
-            [odom_base_pub, odom_targetObj_pub, odom_heli_pub, odom_matrix_pub], 1)
+            [odom_base_pub, odom_heli_pub, odom_matrix_pub], 1)
         ts_camera = message_filters.TimeSynchronizer([frontVision_sensor], 1)
 
         # Register the callback to be called when all sensor readings are ready
@@ -175,7 +220,44 @@ class Quadricopter():
         # Register the callback for when the node is stopped
         rospy.on_shutdown(self.stop_robot)
 
-        # spin() keeps python from exiting until this node is stopped
+        print("Simulation Initialized")
+        rospy.sleep(2.)
+
+        self.routine()
+
+
+    def routine(self):
+        # take off
+        print("Taking Off")
+        self.take_off(0.6)
+        rospy.sleep(5.)
+
+        # move to a point
+        target_pose = [1.85, -1.72, 0.6]
+        target_orientation = [0, 0, 0]
+        print ("Going to waypoint", target_pose)
+        self.set_target(target_pose, target_orientation)
+        rospy.sleep(5.)
+
+        # move to a point
+        target_pose = [1.85, -0.5, 0.6]
+        target_orientation = [0, 0, 0]
+        print ("Going to waypoint", target_pose)
+        self.set_target(target_pose, target_orientation)
+        rospy.sleep(5.)
+
+        # move to a point
+        target_pose = [1.85, 1, 0.6]
+        target_orientation = [0, 0, 0]
+        print ("Going to waypoint", target_pose)
+        self.set_target(target_pose, target_orientation)
+        rospy.sleep(5.)
+
+        #land
+        self.land()
+        rospy.sleep(2.)
+        self.stop_robot()
+
         rospy.spin()
 
 
