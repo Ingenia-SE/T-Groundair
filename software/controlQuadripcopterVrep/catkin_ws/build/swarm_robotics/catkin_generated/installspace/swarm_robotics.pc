@@ -1,8 +1,0 @@
-prefix=/home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/install
-
-Name: swarm_robotics
-Description: Description of swarm_robotics
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib -lswarm_robotics
-Requires: 

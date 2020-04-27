@@ -1,1 +1,0 @@
-/home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel/./cmake.lock 11

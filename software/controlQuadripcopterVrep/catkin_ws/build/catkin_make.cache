@@ -1,2 +1,0 @@
-swarm_robotics
--DCATKIN_DEVEL_PREFIX=/home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/kikito/Documentos/T-GroundAir/controlQuadripcopterVrep/catkin_ws/install -G Unix Makefiles
