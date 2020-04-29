@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Blocks" xmlns:Requirements="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Blocks http://www.eclipse.org/papyrus/sysml/1.4/SysML#//blocks http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements http://www.eclipse.org/papyrus/sysml/1.4/SysML#//requirements">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Requirements="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/sysml/1.4/SysML/Requirements http://www.eclipse.org/papyrus/sysml/1.4/SysML#//requirements">
   <uml:Model xmi:id="_-2UDAAlWEeqiyaaQ4dgl3Q" name="SyRS_GASPORTS">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_--IiQAlWEeqiyaaQ4dgl3Q">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -11,131 +11,113 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_OKM-oAvaEeqw7bnteDd2IQ" name="pkg [package] System Requirements Specifications">
       <packagedElement xmi:type="uml:Package" xmi:id="_bwZukAvaEeqw7bnteDd2IQ" name="pkg [package] Functional Requirements">
         <packagedElement xmi:type="uml:Package" xmi:id="_IsqQgAlsEeqiyaaQ4dgl3Q" name="req [package] System Functional Requirements">
-          <packagedElement xmi:type="uml:Class" xmi:id="_O5w2gAltEeqiyaaQ4dgl3Q" name="System Requirements">
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_5VOXAAlsEeqiyaaQ4dgl3Q" name="User-friendly"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_vwHd8AlsEeqiyaaQ4dgl3Q" name="Help disabled tennis players"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_kzIzAAlsEeqiyaaQ4dgl3Q" name="Improve training sessions"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_UpIpkAlsEeqiyaaQ4dgl3Q" name="Pick up tennis balls"/>
-          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_5VOXAAlsEeqiyaaQ4dgl3Q" name="User-friendly"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_vwHd8AlsEeqiyaaQ4dgl3Q" name="Help disabled tennis players"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_kzIzAAlsEeqiyaaQ4dgl3Q" name="Improve training sessions"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_UpIpkAlsEeqiyaaQ4dgl3Q" name="Pick up tennis balls"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_QMbi0AluEeqiyaaQ4dgl3Q" name="req [package] UAV Functional Requirements">
-          <packagedElement xmi:type="uml:Class" xmi:id="_bD9GAAluEeqiyaaQ4dgl3Q" name="UAV Requeriments">
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_sJRBIAluEeqiyaaQ4dgl3Q" name="Take off"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_1hO2EAluEeqiyaaQ4dgl3Q" name="Flight height recognised"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_HY2X4AlvEeqiyaaQ4dgl3Q" name="Flying along a predesigned trajectory"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_llQsIAlvEeqiyaaQ4dgl3Q" name="Auto land"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_eV9-cAlwEeqiyaaQ4dgl3Q" name="Send information"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_wg4PsAlwEeqiyaaQ4dgl3Q" name="Acceleration and velocity"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_m3odgAlwEeqiyaaQ4dgl3Q" name="Receive information"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_WLScAAlwEeqiyaaQ4dgl3Q" name="Turn back to the initial point"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_Wg0ckAlvEeqiyaaQ4dgl3Q" name="Reach point not contained in trajectory"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_d4SZYAlvEeqiyaaQ4dgl3Q" name="Avoid obstacles"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_h4h7sAlvEeqiyaaQ4dgl3Q" name="Landing"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_76tgoAluEeqiyaaQ4dgl3Q" name="Position recognised"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_2idNEAlvEeqiyaaQ4dgl3Q" name="Tennis ball detection"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_AMFPMAlvEeqiyaaQ4dgl3Q" name="Battery state recognised"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_CMTlEAlwEeqiyaaQ4dgl3Q" name="Tennis ball localization"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_sT3SIAlvEeqiyaaQ4dgl3Q" name="Obstacle detection"/>
-          </packagedElement>
-          <packagedElement xmi:type="uml:Abstraction" xmi:id="_JwJxAAlwEeqiyaaQ4dgl3Q" name="Tennis ball localization is a Derive Requirement of Tennis ball detection" client="_CMTlEAlwEeqiyaaQ4dgl3Q" supplier="_2idNEAlvEeqiyaaQ4dgl3Q"/>
-          <packagedElement xmi:type="uml:Abstraction" xmi:id="_YyutcAlyEeqiyaaQ4dgl3Q" name="Avoid obstacles is a Derive Requeriment of Obstacle detection" client="_d4SZYAlvEeqiyaaQ4dgl3Q" supplier="_sT3SIAlvEeqiyaaQ4dgl3Q"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_JwJxAAlwEeqiyaaQ4dgl3Q" name="Tennis ball localization is a Derive Requirement of Tennis ball detection" client="_2idNEAlvEeqiyaaQ4dgl3Q" supplier="_CMTlEAlwEeqiyaaQ4dgl3Q"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_YyutcAlyEeqiyaaQ4dgl3Q" name="Avoid obstacles is a Derive Requeriment of Obstacle detection" client="_sT3SIAlvEeqiyaaQ4dgl3Q" supplier="_d4SZYAlvEeqiyaaQ4dgl3Q"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_llQsIAlvEeqiyaaQ4dgl3Q" name="Auto land"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_HY2X4AlvEeqiyaaQ4dgl3Q" name="Flying along a predesigned trajectory"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_1hO2EAluEeqiyaaQ4dgl3Q" name="Flight height recognised"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_sJRBIAluEeqiyaaQ4dgl3Q" name="Take off"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_eV9-cAlwEeqiyaaQ4dgl3Q" name="Send information"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_wg4PsAlwEeqiyaaQ4dgl3Q" name="Acceleration and velocity"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_m3odgAlwEeqiyaaQ4dgl3Q" name="Receive information"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_WLScAAlwEeqiyaaQ4dgl3Q" name="Turn back to the initial point"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Wg0ckAlvEeqiyaaQ4dgl3Q" name="Reach point not contained in trajectory"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_d4SZYAlvEeqiyaaQ4dgl3Q" name="Avoid obstacles"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_h4h7sAlvEeqiyaaQ4dgl3Q" name="Landing"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_76tgoAluEeqiyaaQ4dgl3Q" name="Position recognised"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_sT3SIAlvEeqiyaaQ4dgl3Q" name="Obstacle detection"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_CMTlEAlwEeqiyaaQ4dgl3Q" name="Tennis ball localization"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_AMFPMAlvEeqiyaaQ4dgl3Q" name="Battery state recognised"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_2idNEAlvEeqiyaaQ4dgl3Q" name="Tennis ball detection"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_ytBsQAlyEeqiyaaQ4dgl3Q" name="req [package] UGV Functional Requirements">
           <packageImport xmi:type="uml:PackageImport" xmi:id="_hl-lYAvbEeqw7bnteDd2IQ" importedPackage="_IsqQgAlsEeqiyaaQ4dgl3Q"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_5Kxy0AlyEeqiyaaQ4dgl3Q" name="UGV Requirements">
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_CGPR8AlzEeqiyaaQ4dgl3Q" name="Position recognised"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_WR-ygAlzEeqiyaaQ4dgl3Q" name="Turn back to the initial point"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_pTYm4AlzEeqiyaaQ4dgl3Q" name="Acceleration and velocity"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_B-PXEAl0EeqiyaaQ4dgl3Q" name="Ride along a predesigned trajectory"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_KxJMkAlzEeqiyaaQ4dgl3Q" name="Battery state recognised"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_RmFrIAlzEeqiyaaQ4dgl3Q" name="Avoid obstacles"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_v1rPMAlzEeqiyaaQ4dgl3Q" name="Pick up tennis balls"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_0nEhoAlzEeqiyaaQ4dgl3Q" name="Leave tennis balls in a basket"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_beQDEAlzEeqiyaaQ4dgl3Q" name="Send Information"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_jjnnsAlzEeqiyaaQ4dgl3Q" name="Receive information"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_QYezEAl0EeqiyaaQ4dgl3Q" name="Obstacle detection"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_LYFbUAl0EeqiyaaQ4dgl3Q" name="Reach point not contained in trajectory"/>
-          </packagedElement>
-          <packagedElement xmi:type="uml:Abstraction" xmi:id="_oSJW4Al0EeqiyaaQ4dgl3Q" name="Avoid obstacles is a Derive Requirement of Obstacle detection" client="_RmFrIAlzEeqiyaaQ4dgl3Q" supplier="_QYezEAl0EeqiyaaQ4dgl3Q"/>
+          <packagedElement xmi:type="uml:Abstraction" xmi:id="_oSJW4Al0EeqiyaaQ4dgl3Q" name="Avoid obstacles is a Derive Requirement of Obstacle detection" client="_QYezEAl0EeqiyaaQ4dgl3Q" supplier="_RmFrIAlzEeqiyaaQ4dgl3Q"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_CGPR8AlzEeqiyaaQ4dgl3Q" name="Position recognised"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_WR-ygAlzEeqiyaaQ4dgl3Q" name="Turn back to the initial point"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_pTYm4AlzEeqiyaaQ4dgl3Q" name="Acceleration and velocity"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_B-PXEAl0EeqiyaaQ4dgl3Q" name="Ride along a predesigned trajectory"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_KxJMkAlzEeqiyaaQ4dgl3Q" name="Battery state recognised"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_RmFrIAlzEeqiyaaQ4dgl3Q" name="Avoid obstacles"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_v1rPMAlzEeqiyaaQ4dgl3Q" name="Pick up tennis balls"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_0nEhoAlzEeqiyaaQ4dgl3Q" name="Leave tennis balls in a basket"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_beQDEAlzEeqiyaaQ4dgl3Q" name="Send Information"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_jjnnsAlzEeqiyaaQ4dgl3Q" name="Receive information"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_QYezEAl0EeqiyaaQ4dgl3Q" name="Obstacle detection"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_LYFbUAl0EeqiyaaQ4dgl3Q" name="Reach point not contained in trajectory"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="__qVv4Al1EeqiyaaQ4dgl3Q" name="req [package] Server Functional Requirements">
           <packageImport xmi:type="uml:PackageImport" xmi:id="_nHJH4AvbEeqw7bnteDd2IQ" importedPackage="_IsqQgAlsEeqiyaaQ4dgl3Q"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_THazoAl2EeqiyaaQ4dgl3Q" name="Server Requirements">
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_b9te4Al2EeqiyaaQ4dgl3Q" name="Send information"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_iXjV0Al2EeqiyaaQ4dgl3Q" name="Start"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_o-6EUAl2EeqiyaaQ4dgl3Q" name="Process the UGV information"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_w3VZIAl2EeqiyaaQ4dgl3Q" name="Estimate the UGV trajectory"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_sEq7YAl2EeqiyaaQ4dgl3Q" name="Process the UAV information"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_g_4YQAl2EeqiyaaQ4dgl3Q" name="Receive information"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_ZXyJAAl3EeqiyaaQ4dgl3Q" name="User interface"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_YDNiwAl3EeqiyaaQ4dgl3Q" name="Estimate the UAV trajectory"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_mCBccAl2EeqiyaaQ4dgl3Q" name="Restart"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_j5he4Al2EeqiyaaQ4dgl3Q" name="Stop"/>
-          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_b9te4Al2EeqiyaaQ4dgl3Q" name="Send information"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_iXjV0Al2EeqiyaaQ4dgl3Q" name="Start"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_o-6EUAl2EeqiyaaQ4dgl3Q" name="Process the UGV information"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_w3VZIAl2EeqiyaaQ4dgl3Q" name="Estimate the UGV trajectory"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_sEq7YAl2EeqiyaaQ4dgl3Q" name="Process the UAV information"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_g_4YQAl2EeqiyaaQ4dgl3Q" name="Receive information"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_ZXyJAAl3EeqiyaaQ4dgl3Q" name="User interface"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_YDNiwAl3EeqiyaaQ4dgl3Q" name="Estimate the UAV trajectory"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_mCBccAl2EeqiyaaQ4dgl3Q" name="Restart"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_j5he4Al2EeqiyaaQ4dgl3Q" name="Stop"/>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_jUekAAvaEeqw7bnteDd2IQ" name="pkg [package] Non-Functional Requirements">
         <packagedElement xmi:type="uml:Package" xmi:id="_CGT5UA4nEeq-06HUUDh6BQ" name="req [package] Performance Requirements">
-          <packagedElement xmi:type="uml:Class" xmi:id="_UBaM8A4nEeq-06HUUDh6BQ" name="Performance Requirements">
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_XgFd0A4oEeq-06HUUDh6BQ" name="Impact Resistance"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_1ZBccA4oEeq-06HUUDh6BQ" name="UAV Hovering action "/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_DsN1QA4pEeq-06HUUDh6BQ" name="UGV position controller"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_HJfC0A4oEeq-06HUUDh6BQ" name="Failure of communications "/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_AOlQwA4pEeq-06HUUDh6BQ" name="UGV Position and Orientation estimated Error"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_Oa73MA4oEeq-06HUUDh6BQ" name="Batteries"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_5q128A4oEeq-06HUUDh6BQ" name="UAV Control Server Communication"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_jqvc0A4oEeq-06HUUDh6BQ" name="UAV position controller "/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_evHQUA4oEeq-06HUUDh6BQ" name="UAV Position and Orientation estimated Error"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_wPL00A4oEeq-06HUUDh6BQ" name="UAV velocity controller "/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_Igv7QA4pEeq-06HUUDh6BQ" name="UGV velocity controller"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_NjNvkA4pEeq-06HUUDh6BQ" name="UGV Hovering action"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_Q_qBQA4pEeq-06HUUDh6BQ" name="UGV Control Server Communication"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_fh4mgA4nEeq-06HUUDh6BQ" name="Ball localization precision" visibility="public"/>
-          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_XgFd0A4oEeq-06HUUDh6BQ" name="Impact Resistance"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_1ZBccA4oEeq-06HUUDh6BQ" name="UAV Hovering action "/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_DsN1QA4pEeq-06HUUDh6BQ" name="UGV position controller"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_HJfC0A4oEeq-06HUUDh6BQ" name="Failure of communications "/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_AOlQwA4pEeq-06HUUDh6BQ" name="UGV Position and Orientation estimated Error"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Oa73MA4oEeq-06HUUDh6BQ" name="Batteries"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_5q128A4oEeq-06HUUDh6BQ" name="UAV Control Server Communication"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_jqvc0A4oEeq-06HUUDh6BQ" name="UAV position controller "/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_evHQUA4oEeq-06HUUDh6BQ" name="UAV Position and Orientation estimated Error"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_wPL00A4oEeq-06HUUDh6BQ" name="UAV velocity controller "/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Igv7QA4pEeq-06HUUDh6BQ" name="UGV velocity controller"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_NjNvkA4pEeq-06HUUDh6BQ" name="UGV Hovering action"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Q_qBQA4pEeq-06HUUDh6BQ" name="UGV Control Server Communication"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_fh4mgA4nEeq-06HUUDh6BQ" name="Ball localization precision" visibility="public"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_YfSJoA4rEeq-06HUUDh6BQ" name="req [package] Security and Safety Requirements">
-          <packagedElement xmi:type="uml:Class" xmi:id="_e8Q0IA4rEeq-06HUUDh6BQ" name="Security and Safety Requirements">
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_sCKc8A43Eeq-06HUUDh6BQ" name="Operating Authorization"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_L2tzsA44Eeq-06HUUDh6BQ" name="Daylight Operation"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_njcZcA44Eeq-06HUUDh6BQ" name="Alarm of battery low"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_-xNgkA44Eeq-06HUUDh6BQ" name="Distance to airports"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_BXy9wA44Eeq-06HUUDh6BQ" name="System Manual"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_xbxwgA44Eeq-06HUUDh6BQ" name="Drone height limits"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_RFMDsA44Eeq-06HUUDh6BQ" name="Individuals Safety"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_XqlqYA44Eeq-06HUUDh6BQ" name="Maintenance"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_iqBzcA44Eeq-06HUUDh6BQ" name="ODS"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_dDVQsA44Eeq-06HUUDh6BQ" name="Legal Standards"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_GBiwEA44Eeq-06HUUDh6BQ" name="Pre-operational Safety Check"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_sD5s4A44Eeq-06HUUDh6BQ" name="Licenses"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_2teToA44Eeq-06HUUDh6BQ" name="Battery recharge"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_4DeSsA43Eeq-06HUUDh6BQ" name="Wrong side of the court "/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_neDtsA45Eeq-06HUUDh6BQ" name="Safe Stop"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_mHnfMA45Eeq-06HUUDh6BQ" name="Emergency Alerts"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_EGTV8A45Eeq-06HUUDh6BQ" name="UGV path"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_MyqpIA45Eeq-06HUUDh6BQ" name="Colour"/>
-          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_sCKc8A43Eeq-06HUUDh6BQ" name="Operating Authorization"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_L2tzsA44Eeq-06HUUDh6BQ" name="Daylight Operation"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_njcZcA44Eeq-06HUUDh6BQ" name="Alarm of battery low"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-xNgkA44Eeq-06HUUDh6BQ" name="Distance to airports"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_BXy9wA44Eeq-06HUUDh6BQ" name="System Manual"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_xbxwgA44Eeq-06HUUDh6BQ" name="Drone height limits"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_RFMDsA44Eeq-06HUUDh6BQ" name="Individuals Safety"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_XqlqYA44Eeq-06HUUDh6BQ" name="Maintenance"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_iqBzcA44Eeq-06HUUDh6BQ" name="ODS"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_dDVQsA44Eeq-06HUUDh6BQ" name="Legal Standards"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_GBiwEA44Eeq-06HUUDh6BQ" name="Pre-operational Safety Check"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_sD5s4A44Eeq-06HUUDh6BQ" name="Licenses"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_2teToA44Eeq-06HUUDh6BQ" name="Battery recharge"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4DeSsA43Eeq-06HUUDh6BQ" name="Wrong side of the court "/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_neDtsA45Eeq-06HUUDh6BQ" name="Safe Stop"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_mHnfMA45Eeq-06HUUDh6BQ" name="Emergency Alerts"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_EGTV8A45Eeq-06HUUDh6BQ" name="UGV path"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_MyqpIA45Eeq-06HUUDh6BQ" name="Colour"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_DCe2kA47Eeq-06HUUDh6BQ" name="req [package] Usability Requirements">
-          <packagedElement xmi:type="uml:Class" xmi:id="_HLjkwA47Eeq-06HUUDh6BQ" name="Usability Requirements">
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_QVBDoA47Eeq-06HUUDh6BQ" name="Artificial Lightning"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_W30pUA47Eeq-06HUUDh6BQ" name="User Manual"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_YgvH4A47Eeq-06HUUDh6BQ" name="UGV transport"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_aveQUA47Eeq-06HUUDh6BQ" name="Size of the server"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_h3RZcA47Eeq-06HUUDh6BQ" name="Indicators"/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_jk5_8A47Eeq-06HUUDh6BQ" name="Simplified system control"/>
-          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_QVBDoA47Eeq-06HUUDh6BQ" name="Artificial Lightning"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_W30pUA47Eeq-06HUUDh6BQ" name="User Manual"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_YgvH4A47Eeq-06HUUDh6BQ" name="UGV transport"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_aveQUA47Eeq-06HUUDh6BQ" name="Size of the server"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_h3RZcA47Eeq-06HUUDh6BQ" name="Indicators"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_jk5_8A47Eeq-06HUUDh6BQ" name="Simplified system control"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_EQ8_YA48Eeq-06HUUDh6BQ" name="req [package] Reliability and Availability Requirements">
-          <packagedElement xmi:type="uml:Class" xmi:id="_KFqwAA48Eeq-06HUUDh6BQ" name="Reliability and Availability Requirements">
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_NxoEYA48Eeq-06HUUDh6BQ" name="Final price of the product"/>
-          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_NxoEYA48Eeq-06HUUDh6BQ" name="Final price of the product"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_fkiXQA46Eeq-06HUUDh6BQ" name="req [package] Error handling Requirements">
-          <packagedElement xmi:type="uml:Class" xmi:id="_kkvhwA46Eeq-06HUUDh6BQ" name="Error Handling Requirements">
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_pAbC4A46Eeq-06HUUDh6BQ" name="Connection failure "/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_qKELgA46Eeq-06HUUDh6BQ" name="Weather conditions "/>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_rFvJkA46Eeq-06HUUDh6BQ" name="Ball position error"/>
-          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_pAbC4A46Eeq-06HUUDh6BQ" name="Connection failure "/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_qKELgA46Eeq-06HUUDh6BQ" name="Weather conditions "/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_rFvJkA46Eeq-06HUUDh6BQ" name="Ball position error"/>
         </packagedElement>
       </packagedElement>
     </packagedElement>
@@ -204,8 +186,6 @@
   <Requirements:Requirement xmi:id="_kzKBKglsEeqiyaaQ4dgl3Q" base_Class="_kzIzAAlsEeqiyaaQ4dgl3Q" id="RFSY02" text="The system must be able to help the tennis players to improve and optimize the training session."/>
   <Requirements:Requirement xmi:id="_vwJTIAlsEeqiyaaQ4dgl3Q" base_Class="_vwHd8AlsEeqiyaaQ4dgl3Q" id="RFSY03" text="The system must be able to help disabled tennis players and facilitate their training."/>
   <Requirements:Requirement xmi:id="_5VPlIAlsEeqiyaaQ4dgl3Q" base_Class="_5VOXAAlsEeqiyaaQ4dgl3Q" id="RFSY04" text="The system must be user-friendly for the tennis players and does not require the intervention of a specialised operator."/>
-  <Blocks:Block xmi:id="_O5yrsAltEeqiyaaQ4dgl3Q" base_Class="_O5w2gAltEeqiyaaQ4dgl3Q"/>
-  <Blocks:Block xmi:id="_bD-7MAluEeqiyaaQ4dgl3Q" base_Class="_bD9GAAluEeqiyaaQ4dgl3Q"/>
   <Requirements:Requirement xmi:id="_sJS2UAluEeqiyaaQ4dgl3Q" base_Class="_sJRBIAluEeqiyaaQ4dgl3Q" id="RFUA01" text="The UAV must take off vertically when the systems starts working."/>
   <Requirements:Requirement xmi:id="_1hQEQgluEeqiyaaQ4dgl3Q" base_Class="_1hO2EAluEeqiyaaQ4dgl3Q" id="RFUA02" text="The UAV must estimate its flight height all the time."/>
   <Requirements:Requirement xmi:id="_76uu0gluEeqiyaaQ4dgl3Q" base_Class="_76tgoAluEeqiyaaQ4dgl3Q" id="RFUA03" text="The UAV must estimate its position all the time."/>
@@ -224,7 +204,6 @@
   <Requirements:Requirement xmi:id="_m3pEpAlwEeqiyaaQ4dgl3Q" base_Class="_m3odgAlwEeqiyaaQ4dgl3Q" id="RFUA15" text="The UAV must be able to receive the information about his trajectory and new values for the actuators."/>
   <Requirements:Requirement xmi:id="_wg5d0AlwEeqiyaaQ4dgl3Q" base_Class="_wg4PsAlwEeqiyaaQ4dgl3Q" id="RFUG16" text="The UAV must be able to control his acceleration and velocity depend of the operation that it is performing."/>
   <Requirements:DeriveReqt xmi:id="_Yyv7kAlyEeqiyaaQ4dgl3Q" base_DirectedRelationship="_YyutcAlyEeqiyaaQ4dgl3Q" base_Abstraction="_YyutcAlyEeqiyaaQ4dgl3Q"/>
-  <Blocks:Block xmi:id="_5KzoAAlyEeqiyaaQ4dgl3Q" base_Class="_5Kxy0AlyEeqiyaaQ4dgl3Q"/>
   <Requirements:Requirement xmi:id="_CGRHIAlzEeqiyaaQ4dgl3Q" base_Class="_CGPR8AlzEeqiyaaQ4dgl3Q" id="RFUG01" text="The UGV must estimate its position all the time."/>
   <Requirements:Requirement xmi:id="_KxJzsglzEeqiyaaQ4dgl3Q" base_Class="_KxJMkAlzEeqiyaaQ4dgl3Q" id="RFUG02" text="The UGV must estimate its battery state all the time."/>
   <Requirements:Requirement xmi:id="_RmGSRAlzEeqiyaaQ4dgl3Q" base_Class="_RmFrIAlzEeqiyaaQ4dgl3Q" id="RFUG03" text="The UGV must be able to avoid all the obstacles on his trajectory."/>
@@ -238,7 +217,6 @@
   <Requirements:Requirement xmi:id="_LYGpggl0EeqiyaaQ4dgl3Q" base_Class="_LYFbUAl0EeqiyaaQ4dgl3Q" id="RFUG11" text="The UGV must be able to ride to a point without a trajectory stablished before."/>
   <Requirements:Requirement xmi:id="_QYgBMAl0EeqiyaaQ4dgl3Q" base_Class="_QYezEAl0EeqiyaaQ4dgl3Q" id="RFUG12" text="The UGV must detect obstacles on his trajectory."/>
   <Requirements:DeriveReqt xmi:id="_oSKlAAl0EeqiyaaQ4dgl3Q" base_DirectedRelationship="_oSJW4Al0EeqiyaaQ4dgl3Q" base_Abstraction="_oSJW4Al0EeqiyaaQ4dgl3Q"/>
-  <Blocks:Block xmi:id="_THcBwAl2EeqiyaaQ4dgl3Q" base_Class="_THazoAl2EeqiyaaQ4dgl3Q"/>
   <Requirements:Requirement xmi:id="_b9vUEAl2EeqiyaaQ4dgl3Q" base_Class="_b9te4Al2EeqiyaaQ4dgl3Q" id="RFSE01" text="The server must be able to send all the information necessary for the control of the UAV and the UGV."/>
   <Requirements:Requirement xmi:id="_g_5mYAl2EeqiyaaQ4dgl3Q" base_Class="_g_4YQAl2EeqiyaaQ4dgl3Q" id="RFSE02" text="The server must be able to receive the information about the status of the UAV and the UGV."/>
   <Requirements:Requirement xmi:id="_iXlLAAl2EeqiyaaQ4dgl3Q" base_Class="_iXjV0Al2EeqiyaaQ4dgl3Q" id="RFSE03" text="The server must be able to start all the system."/>
@@ -249,7 +227,6 @@
   <Requirements:Requirement xmi:id="_w3XOUAl2EeqiyaaQ4dgl3Q" base_Class="_w3VZIAl2EeqiyaaQ4dgl3Q" id="RFSE08" text="The server must be able to estimate the UGV trajectory."/>
   <Requirements:Requirement xmi:id="_YDPX8Al3EeqiyaaQ4dgl3Q" base_Class="_YDNiwAl3EeqiyaaQ4dgl3Q" id="RFSE09" text="The server must be able to estimate the UAV trajectory."/>
   <Requirements:Requirement xmi:id="_ZXz-MAl3EeqiyaaQ4dgl3Q" base_Class="_ZXyJAAl3EeqiyaaQ4dgl3Q" id="RFSE10" text="The server must be including a user-friendly interface to interact with the system."/>
-  <Blocks:Block xmi:id="_UBlMEA4nEeq-06HUUDh6BQ" base_Class="_UBaM8A4nEeq-06HUUDh6BQ"/>
   <Requirements:Requirement xmi:id="_fh8Q4A4nEeq-06HUUDh6BQ" base_Class="_fh4mgA4nEeq-06HUUDh6BQ" id="RNFPE01" text="The UAV shall detect the ball locate with an accuracy of 3 cm."/>
   <Requirements:Requirement xmi:id="_HJjUQA4oEeq-06HUUDh6BQ" base_Class="_HJfC0A4oEeq-06HUUDh6BQ" id="RNFPE02 " text="The communication between the server, UAV and UGV must be constant during the execution of the mission."/>
   <Requirements:Requirement xmi:id="_Oa-TcA4oEeq-06HUUDh6BQ" base_Class="_Oa73MA4oEeq-06HUUDh6BQ" id="RNFPE03 " text="The UAVs must be several batteries to work. Concretely, there must be batteries for a maximum of one hour."/>
@@ -264,7 +241,6 @@
   <Requirements:Requirement xmi:id="_IgxwcA4pEeq-06HUUDh6BQ" base_Class="_Igv7QA4pEeq-06HUUDh6BQ" id="RNFPE12 " text="Control server must be able to control UGV with velocity commands with less than 5% error."/>
   <Requirements:Requirement xmi:id="_NjPkwA4pEeq-06HUUDh6BQ" base_Class="_NjNvkA4pEeq-06HUUDh6BQ" id="RNFPE13 " text="UGV must be able to keep its current state when no commands were received within 0.5 seconds."/>
   <Requirements:Requirement xmi:id="_Q_r2cA4pEeq-06HUUDh6BQ" base_Class="_Q_qBQA4pEeq-06HUUDh6BQ" id="RNFPE14 " text="UGV must be able to communicate with control server with a bit error rate of 10^-9 or less."/>
-  <Blocks:Block xmi:id="_e8TQYA4rEeq-06HUUDh6BQ" base_Class="_e8Q0IA4rEeq-06HUUDh6BQ"/>
   <Requirements:Requirement xmi:id="_sCMSIA43Eeq-06HUUDh6BQ" base_Class="_sCKc8A43Eeq-06HUUDh6BQ" id="RNFSE01 " text="An authorization for operating the drone-vehicle system should be granted by ETSII´s authorities before testing the system on the field."/>
   <Requirements:Requirement xmi:id="_4DgH4A43Eeq-06HUUDh6BQ" base_Class="_4DeSsA43Eeq-06HUUDh6BQ" id="RNFSE02 " text="If the UAV remains more than 10 seconds over the wrong side of the tennis court (in which the player is training), the drone shall land."/>
   <Requirements:Requirement xmi:id="_BX0y8A44Eeq-06HUUDh6BQ" base_Class="_BXy9wA44Eeq-06HUUDh6BQ" id="RNFSE03 " text="Pilots/Operators are encouraged to read the system’s manual thoroughly to become familiar with all features, limitations, and recommended maintenance."/>
@@ -283,17 +259,14 @@
   <Requirements:Requirement xmi:id="_MyseUA45Eeq-06HUUDh6BQ" base_Class="_MyqpIA45Eeq-06HUUDh6BQ" id="RNFSE16 " text="In order to ensure that the user visualizes the system in every moment, the colour of the system should be bright enough to not hide it in the environment where it will be used."/>
   <Requirements:Requirement xmi:id="_mHpUYA45Eeq-06HUUDh6BQ" base_Class="_mHnfMA45Eeq-06HUUDh6BQ" id="RNFSE17 " text="In case there is a situation in which the system could harm the user, an emergency alert should be displayed to inform about it and avoid accidents."/>
   <Requirements:Requirement xmi:id="_neFi4A45Eeq-06HUUDh6BQ" base_Class="_neDtsA45Eeq-06HUUDh6BQ" id="RNFSE18" text="The UGV must be able to execute a safe stop whenever the associated signal is sent by the final user via the server interface."/>
-  <Blocks:Block xmi:id="_kkxW8A46Eeq-06HUUDh6BQ" base_Class="_kkvhwA46Eeq-06HUUDh6BQ"/>
   <Requirements:Requirement xmi:id="_pAc4EA46Eeq-06HUUDh6BQ" base_Class="_pAbC4A46Eeq-06HUUDh6BQ" id="RNFER01 " text="In case of failure of the connection between the UAV and the server for more than 5 seconds, the drone shall land."/>
   <Requirements:Requirement xmi:id="_qKGAsA46Eeq-06HUUDh6BQ" base_Class="_qKELgA46Eeq-06HUUDh6BQ" id="RNFER02 " text="In case of problematic weather conditions, such as heavy wind, that make the UAV stay away from its path three times or more, the drone shall land."/>
   <Requirements:Requirement xmi:id="_rFwXsA46Eeq-06HUUDh6BQ" base_Class="_rFvJkA46Eeq-06HUUDh6BQ" id="RNFER03 " text="UGV must have a maximum pick up time. In case the allowed time is exceeded, the UGV must skip that ball pickup and go for the next one."/>
-  <Blocks:Block xmi:id="_HLlZ8A47Eeq-06HUUDh6BQ" base_Class="_HLjkwA47Eeq-06HUUDh6BQ"/>
   <Requirements:Requirement xmi:id="_QVC40A47Eeq-06HUUDh6BQ" base_Class="_QVBDoA47Eeq-06HUUDh6BQ" id="RNFUS01 " text="The artificial lightning should not interfere with the recognition system of the drone for locating the tennis balls in the court."/>
   <Requirements:Requirement xmi:id="_W32egA47Eeq-06HUUDh6BQ" base_Class="_W30pUA47Eeq-06HUUDh6BQ" id="RNFUS02 " text="A user manual should be made so that all the users of the system understand the way the system works."/>
   <Requirements:Requirement xmi:id="_Ygw9EA47Eeq-06HUUDh6BQ" base_Class="_YgvH4A47Eeq-06HUUDh6BQ" id="RFNUS03 " text="If the UGV is too heavy, it must be transported in a kind of platform. This platform must be easy to use by the user."/>
   <Requirements:Requirement xmi:id="_avgFgA47Eeq-06HUUDh6BQ" base_Class="_aveQUA47Eeq-06HUUDh6BQ" id="RNFUS04" text="The server used to exchange the information between the UAV and the UGV must be easy to use and transport, such as a laptop."/>
   <Requirements:Requirement xmi:id="_h3TOoA47Eeq-06HUUDh6BQ" base_Class="_h3RZcA47Eeq-06HUUDh6BQ" id="RNFUS05 " text="The system should include indicators in order to inform the user about its status."/>
   <Requirements:Requirement xmi:id="_jk71IA47Eeq-06HUUDh6BQ" base_Class="_jk5_8A47Eeq-06HUUDh6BQ" id="RNFUS06 " text="The system controller must have a simple and complete interface."/>
-  <Blocks:Block xmi:id="_KFtMQA48Eeq-06HUUDh6BQ" base_Class="_KFqwAA48Eeq-06HUUDh6BQ"/>
   <Requirements:Requirement xmi:id="_Nxp5kA48Eeq-06HUUDh6BQ" base_Class="_NxoEYA48Eeq-06HUUDh6BQ" id="RNFRE01 " text="The final price of the system should be stablished so that it will be easily affordable by tennis institutions/corporations."/>
 </xmi:XMI>
