@@ -5,9 +5,12 @@
 #include <ros/ros.h>
 #include <functional>
 #include <thread>
+#include <iostream>
+#include <math.h>
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
 #include "std_msgs/Float32.h"
+#include "std_msgs/Int16.h"
 #include "ros_gazebo_v1/balls.h"
 #include <opencv2/highgui/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
@@ -43,7 +46,8 @@ namespace gazebo {
 			image_transport::ImageTransport it(this->central_station_node);
 			this->sub = it.subscribe("/image_drone",1,boost::bind(&central_station::imageCallback, this, _1));
 			this->pub = this->central_station_node.advertise<std_msgs::Float32>("/check",10);
-			this->balls_pub = this->central_station_node.advertise<test_image_transport::balls>("balls", 1);
+			this->pub_interface = this->central_station_node.advertise<std_msgs::Int16>("/central_ok",10);
+			//this->balls_pub = this->central_station_node.advertise<test_image_transport::balls>("balls", 1);
 			//spinner.spin();
 			this->rosQueueThread = std::thread(std::bind(&central_station::QueueThread, this));
 		}
@@ -58,22 +62,33 @@ namespace gazebo {
 		//}
 
 		public: void imageCallback(const sensor_msgs::ImageConstPtr& msg){
+			std_msgs::Float32 message;
+			std_msgs::Int16 message_2;
+			float info = 0.0;
+			int info_2 = 1;
+		
 			try
 			{
 				Mat image = cv_bridge::toCvShare(msg, "bgr8")->image;
 				Mat mask;
-
 				imshow("1. Imagen inicial", image);
 				mask = circleBalls(image);
-				//imshow("circleBalls", mask);
 				waitKey(1000);
-				cout<<"Listen again? (0/1): ";
-				cin>>continueSubscription;
-				if(!continueSubscription) ros::shutdown();
+				message.data = info;
+				message_2.data = info_2;
+				this->pub.publish(message);
+				this->pub_interface.publish(message_2);
+				
+				//imshow("circleBalls", mask);
+				//cout<<"Listen again? (0/1): ";
+				//cin>>continueSubscription;
+				//if(!continueSubscription) ros::shutdown();
 		  	}
 			catch (cv_bridge::Exception& e)
 			{
+			info=1.0;
 			ROS_ERROR("Could not convert from '%s' to 'bgr8'.", msg->encoding.c_str());
+			this->pub.publish(message);
 			}
 		}
 
@@ -82,11 +97,11 @@ namespace gazebo {
 			cvtColor(image, mask, COLOR_BGR2HSV);
 			GaussianBlur(mask, mask, Size(7, 7), 1.5, 1.5);
 			inRange(mask, Scalar(55 / 2.0, 0.2 * 256, 0.6 * 256, 0), Scalar(72 / 2.0, 1 * 256, 1 * 256, 0), mask); //Máscara 8
-			imshow("2. Máscara", mask);
+			//imshow("2. Máscara", mask);
 			erode(mask, mask, Mat(), Point(-1, -1), 1);
-			imshow("3. Máscara con filtro erode", mask);
+			//imshow("3. Máscara con filtro erode", mask);
 			dilate(mask, mask, Mat(), Point(-1, -1), 4);
-			imshow("4. Máscara con filtro erode y dilate", mask);
+			//imshow("4. Máscara con filtro erode y dilate", mask);
 
 	
 			//Mat se21 = getStructuringElement(MORPH_RECT, Size(21, 21));
@@ -96,7 +111,7 @@ namespace gazebo {
 			if (mode == 1) {	//HoughCircles
 				// Convert mask into a grayscale image
 				GaussianBlur(mask, mask, Size(15, 15), 0, 0);
-				imshow("5-2. Máscara con filtro grayscale", mask);
+				//imshow("5-2. Máscara con filtro grayscale", mask);
 
 				// Run the Hough function
 				vector<Vec3f> circles;
@@ -158,11 +173,23 @@ namespace gazebo {
 				}
 			}
 
-			imshow("6. Resultado final", mask);
+			//imshow("6. Resultado final", mask);
 			imshow("7. Resultado final", image);
 			imwrite("tutorial8-"+ to_string(mode)+".jpg", image);
 
 			std::cout<<"Balls positions list:"<<std::endl;
+			for(int i=0; i<(int)ballsMsg.ballsNumber; i++){
+				std::cout<<"("<<ballsMsg.points[i].x<<", "<<ballsMsg.points[i].y<<")"<<std::endl;
+			}
+			std::cout<<std::endl;
+
+			//Cambiar cuando se decida la recepcion de la posicion del dron
+			float x_ugv = 0.0;
+			float y_ugv = 0.0;
+
+			ordenar(x_ugv, y_ugv);
+
+			std::cout<<"Balls positions list FIRST ELEMENT OK:"<<std::endl;
 			for(int i=0; i<(int)ballsMsg.ballsNumber; i++){
 				std::cout<<"("<<ballsMsg.points[i].x<<", "<<ballsMsg.points[i].y<<")"<<std::endl;
 			}
@@ -173,6 +200,66 @@ namespace gazebo {
 			return image;
 		}
 
+
+		public: void ordenar (float x_ugv, float y_ugv){
+     			
+			float x_distancia_ugv_bola[ballsMsg.ballsNumber], y_distancia_ugv_bola[ballsMsg.ballsNumber];
+     			float modulo_distancia_ugv_bola[ballsMsg.ballsNumber], modulo_distancia_bola_bola[ballsMsg.ballsNumber];
+	 		float aux1, aux2, aux3;
+
+    			for(int i=0; i<(int)ballsMsg.ballsNumber; i++){
+				x_distancia_ugv_bola[i]=ballsMsg.points[i].x - x_ugv;
+				y_distancia_ugv_bola[i]=ballsMsg.points[i].y - y_ugv;
+				modulo_distancia_ugv_bola[i]=sqrt(pow(x_distancia_ugv_bola[i],2) + pow(y_distancia_ugv_bola[i],2));
+    			}		
+
+			/* Ordenamos las distancias hasta el ugv y reordenamos la matriz de posicion bolas*/
+			for(int i=0; i<(int)ballsMsg.ballsNumber-2; i++){ 
+				for(int j=1; j<(int)ballsMsg.ballsNumber-1; j++){
+					if (modulo_distancia_ugv_bola[j] < modulo_distancia_ugv_bola[i]) 
+					{ 
+						/* Cambiamos el orden del vector de distancias*/
+						aux1 = modulo_distancia_ugv_bola[j]; 
+						modulo_distancia_ugv_bola[j] = modulo_distancia_ugv_bola[i]; 
+						modulo_distancia_ugv_bola[i] = aux1; 
+						/* Cambiamos la componente x de la matriz de posicion bolas */
+						aux2 = ballsMsg.points[j].x; 
+						ballsMsg.points[j].x = ballsMsg.points[i].x; 
+						ballsMsg.points[i].x = aux2;
+						/* Cambiamos la componente y de la matriz de posicion bolas */
+						aux3 = ballsMsg.points[j].y; 
+						ballsMsg.points[j].y = ballsMsg.points[i].y; 
+						ballsMsg.points[i].y = aux3;  
+					}
+				} 
+			}     
+
+		/* Ahora la primera fila de la matriz hace referencia a la bola mas cercana al ugv al inicio, pero
+		cuando se recoja esa primera bola cambia la posicion inicial del ugv y puede ser que haya otra bola
+		que este mas cercana ahora del ugv, por lo que se tiene que hacer un nuevo orden*/
+
+		/*	for(i=1; i<ballsNumber-1; i++){
+				for(j=2; j<ballsNumber; i++){	
+					modulo_distancia_bola_bola[i]=sqrt(pow(points[i].x - posicion_bolas[i--][0]) + pow(points[i].y - posicion_bolas[i--][1]));
+					modulo_distancia_bola_bola[j]=sqrt(pow(points[j].x - posicion_bolas[i--][0]) + pow(points[j].y - posicion_bolas[i--][1]));
+					if (modulo_distancia_bola_bola[j] < modulo_distancia_bola_bola[i]) 
+					{  
+						//Cambiamos la componente x de la matriz de posicion bolas
+						aux2 = points[j].x; 
+				 		points[j].x = points[i].x; 
+						points[i].x = aux2;
+						//Cambiamos la componente y de la matriz de posicion bolas
+						aux3 = points[j].y; 
+				 		points[j].y = points[i].y; 
+						points[i].y = aux3;  
+					}
+				}
+			}
+		*/
+
+			/* Lo que se consigue es que la matriz posicion_bolas[][] esté ordenada de tal forma que el ugv
+			recogera cada vez la bola que tenga mas cercana en linea recta */ 
+		}
 
 		//-7 \brief ROS helper function that processes messages
 		private: void QueueThread(){
@@ -192,7 +279,8 @@ namespace gazebo {
 		private: ros::NodeHandle central_station_node;
 		private: image_transport::Subscriber sub;
 		private: ros::Publisher pub;
-		private: ros::Publisher balls_pub;
+		private: ros::Publisher pub_interface; 
+		//private: ros::Publisher balls_pub;
 		//private: ros::CallbackQueue rosQueue;
 		private: std::thread rosQueueThread;
 

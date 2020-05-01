@@ -23,6 +23,7 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   rospy
   std_msgs
+  genmsg
   message_generation
 )
 
@@ -64,3 +65,7 @@ target_link_libraries(central_station_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRAR
 
 add_library(drone_plugin SHARED src/drone.cc)
 target_link_libraries(drone_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${OpenCV_LIBRARIES})
+
+add_executable(interface src/interface.cpp)
+target_link_libraries(interface ${catkin_LIBRARIES})
+
