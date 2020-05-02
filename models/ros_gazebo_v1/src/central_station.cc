@@ -93,55 +93,59 @@ namespace gazebo {
 		}
 
 		public: Mat circleBalls(Mat image){
-			Mat mask;
+			Mat mask, azul, rojo;
+			double conversion; //para convertir la distancia en la imagen a distancia real
+			int distanciareal = 11; //distancia real entre los dos puntos de control. es el ancho de la pista de tenis en metros
 			cvtColor(image, mask, COLOR_BGR2HSV);
 			GaussianBlur(mask, mask, Size(7, 7), 1.5, 1.5);
-			inRange(mask, Scalar(55 / 2.0, 0.2 * 256, 0.6 * 256, 0), Scalar(72 / 2.0, 1 * 256, 1 * 256, 0), mask); //Máscara 8
+
+				//cuadrado azul
+				inRange(mask, Scalar(230 / 2.0, 0.8 * 256, 0.35 * 256, 0), Scalar(250 / 2.0, 1 * 256, 0.65 * 256, 0), azul);
+				//imshow("1. azul", azul);
+				erode(azul, azul, Mat(), Point(-1, -1), 1);
+				dilate(azul, azul, Mat(), Point(-1, -1), 4);
+				vector<vector<Point>> puntoazul;
+				findContours(azul, puntoazul, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+				cvtColor(azul, azul, COLOR_GRAY2RGB);
+				Point2f centroazul;
+				float radioazul = 0;
+				minEnclosingCircle(puntoazul[0], centroazul, radioazul);
+				// circle center
+				circle(image, centroazul, 2, Scalar(0, 0, 0), -1, 8, 0);
+				// circle outline
+				circle(image, centroazul, radioazul, Scalar(0, 0, 0), 2, 8, 0);
+
+				//cuadrado rojo
+				inRange(mask, Scalar(0 / 2.0, 0.8 * 256, 0.35 * 256, 0), Scalar(15 / 2.0, 1 * 256, 0.6 * 256, 0), rojo);
+				//imshow("1. rojo", rojo);
+				erode(rojo, rojo, Mat(), Point(-1, -1), 1);
+				dilate(rojo, rojo, Mat(), Point(-1, -1), 4);
+				vector<vector<Point>> puntorojo;
+				findContours(rojo, puntorojo, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+				cvtColor(rojo, rojo, COLOR_GRAY2RGB);
+				Point2f centrorojo;
+				float radiorojo = 0;
+				minEnclosingCircle(puntorojo[0], centrorojo, radiorojo);
+				// circle center
+				circle(image, centrorojo, 2, Scalar(0, 0, 0), -1, 8, 0);
+				// circle outline
+				circle(image, centrorojo, radiorojo, Scalar(0, 0, 0), 2, 8, 0);
+
+				//el factor de conversion es la distancia real que le corresponderia a una u.m. en la imagen
+				conversion = distanciareal / sqrt( pow( (centroazul.x - centrorojo.x), 2) + pow ( ( centroazul.y - centrorojo.y), 2) );
+				//se convierte el centro del cuadrado azul de distancia de la imagen a distancia real
+				centroazul.x = conversion * centroazul.x;
+				centroazul.y = conversion * centroazul.y;
+
+
+			//Pelotas
+			inRange(mask, Scalar(110 / 2.0, 0.80 * 256, 0.35 * 256, 0), Scalar(138 / 2.0, 1 * 256, 0.65 * 256, 0), mask);
 			//imshow("2. Máscara", mask);
 			erode(mask, mask, Mat(), Point(-1, -1), 1);
 			//imshow("3. Máscara con filtro erode", mask);
 			dilate(mask, mask, Mat(), Point(-1, -1), 4);
 			//imshow("4. Máscara con filtro erode y dilate", mask);
 
-	
-			//Mat se21 = getStructuringElement(MORPH_RECT, Size(21, 21));
-			//morphologyEx(mask, mask, MORPH_CLOSE, se21);
-			//imshow("5. Máscara con filtro de ruido background", mask);
-
-			if (mode == 1) {	//HoughCircles
-				// Convert mask into a grayscale image
-				GaussianBlur(mask, mask, Size(15, 15), 0, 0);
-				//imshow("5-2. Máscara con filtro grayscale", mask);
-
-				// Run the Hough function
-				vector<Vec3f> circles;
-				HoughCircles(mask, circles, HOUGH_GRADIENT, 2, mask.rows / 10, 100, 40, 0, 0);
-				cout << circles.size()<<" balls found.\t"; //Deben ser 2 circulos
-				ballsMsg.ballsNumber = circles.size();
-				geometry_msgs::Point point;
-
-				cvtColor(mask, mask, COLOR_GRAY2RGB);
-
-				//Mostrar círculos
-				for (size_t i = 0; i < circles.size(); i++){
-				//Crear mensaje ROS
-				point.x=cvRound(circles[i][0]);
-				point.y=cvRound(circles[i][1]);
-				point.z=0;
-				ballsMsg.points.push_back(point);
-
-				//Dibujar círculos en imágenes
-				Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
-				int radius = cvRound(circles[i][2]);
-				// circle center
-				circle(image, center, 3, Scalar(0, 255, 0), -1, 8, 0);
-				circle(mask, center, 3, Scalar(0, 255, 0), -1, 8, 0);
-				// circle outline
-				circle(image, center, radius, Scalar(0, 0, 255), 3, 8, 0);
-				circle(mask, center, radius, Scalar(0, 0, 255), 3, 8, 0);
-				}
-			}
-			else if (mode == 2) { //findContours
 				// Run the findContours function
 				vector<vector<Point>> contours;
 				findContours(mask, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
@@ -152,30 +156,34 @@ namespace gazebo {
 				cvtColor(mask, mask, COLOR_GRAY2RGB);
 
 				//Mostrar círculos
-				for (size_t i = 0; i < contours.size(); i++){
-					// Find the minimum area enclosing circle
-					Point2f center;
-					float radius = 0;
-					minEnclosingCircle(contours[i], center, radius);
+				for (size_t i = 0; i < contours.size(); i++)
+				{
+				// Find the minimum area enclosing circle
+				Point2f center;
+				float radius = 0;
+				minEnclosingCircle(contours[i], center, radius);
 
-					//Crear mensaje ROS
-					point.x=center.x;
-					point.y=center.y;
-					point.z=0;
-					ballsMsg.points.push_back(point);
+				// circle center
+				circle(image, center, 2, Scalar(0, 255, 0), -1, 8, 0);
+				circle(mask, center, 2, Scalar(0, 255, 0), -1, 8, 0);
+				// circle outline
+				circle(image, center, radius, Scalar(0, 0, 255), 2, 8, 0);
+				circle(mask, center, radius, Scalar(0, 0, 255), 2, 8, 0);
 
-					// circle center
-					circle(image, center, 2, Scalar(0, 255, 0), -1, 8, 0);
-					circle(mask, center, 2, Scalar(0, 255, 0), -1, 8, 0);
-					// circle outline
-					circle(image, center, radius, Scalar(0, 0, 255), 2, 8, 0);
-					circle(mask, center, radius, Scalar(0, 0, 255), 2, 8, 0);
+				//se convierten las posiciones de los centros de las pelotas a coordenadas reales
+				center.x = conversion * center.x;
+				center.y = conversion * center.y; 
+
+				//Crear mensaje ROS
+				point.x=center.x;
+				point.y=center.y;
+				point.z=0;
+				ballsMsg.points.push_back(point);
 				}
-			}
 
 			//imshow("6. Resultado final", mask);
 			imshow("7. Resultado final", image);
-			imwrite("tutorial8-"+ to_string(mode)+".jpg", image);
+			imwrite("final-"+ to_string(1)+".jpg", image);
 
 			std::cout<<"Balls positions list:"<<std::endl;
 			for(int i=0; i<(int)ballsMsg.ballsNumber; i++){

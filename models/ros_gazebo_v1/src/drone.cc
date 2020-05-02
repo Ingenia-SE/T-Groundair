@@ -54,7 +54,7 @@ namespace gazebo {
 		}
 
 		public: void interfaceCheck(const std_msgs::Int16ConstPtr &_msg){
-			cv::Mat image = cv::imread("/home/alvaro/gazebo_ros_ws/src/ros_gazebo_v1/src/tennis5.jpg", cv::IMREAD_UNCHANGED);
+			cv::Mat image = cv::imread("/home/alvaro/gazebo_ros_ws/src/ros_gazebo_v1/src/tennisverde.jpg", cv::IMREAD_UNCHANGED);
 			sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
 			this->pub.publish(msg);
 		}
