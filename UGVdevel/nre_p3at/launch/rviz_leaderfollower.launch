@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Now launch rviz -->
+  <include file="$(find nre_p3at)/launch/upload_pioneer3at.xml"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find nre_p3at)/rviz/p3at_double.rviz" output="screen"/>
+</launch>
+

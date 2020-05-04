@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- Note - This is the launch file used by upstart on booting the pionoeers -->
+<launch>
+
+  <node name="master_discovery" pkg="master_discovery_fkie" type="master_discovery" output="screen">
+   <param name="mcast_group" value="224.0.0.1" />
+ </node>
+
+  <param name="tf_prefix" value="$(optenv HNAME /)"/>
+
+  <group ns="$(optenv HNAME /)">
+    <arg name="port" default="/dev/ttyS0" />
+    <node pkg="rosaria" type="RosAria" name="my_p3at" output="screen" respawn="true">
+      <param name="port" value="$(arg port)" />
+      <param name="sonar_frame" value="$(optenv HNAME)/sonar_frame"/>
+      <param name="odom_frame" value="$(optenv HNAME)/odom"/>
+      <param name="base_link_frame" value="$(optenv HNAME)/base_link"/>
+    </node>
+    
+    <!-- This following lines are taken from the p2os_urdf package-->
+    <include file="$(find p2os_urdf)/launch/upload_pioneer3at.xml"/>
+    <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher" respawn="true">
+      <param name="publish_frequency" type="double" value="10.0"/>
+      <param name="tf_prefix" type="string" value="$(optenv HNAME)"/>
+    </node>
+    <node pkg="p2os_urdf" type="p2os_publisher_3at" name="publisher"/>
+    
+    <include file="$(find microstrain_3dm_gx5_45)/launch/microstrain_pioneer.launch"/>
+
+    <include file="$(find geonav_transform)/launch/cavr.launch"/>
+    
+    <include file="$(find thingmagic_rfid)/launch/reader_pioneer.launch"/>
+
+    <include file="$(find nre_p3at)/launch/hokuyo.launch"/>
+
+    <include file="$(find nre_p3at)/launch/usb_cam.launch"/>
+  </group>
+</launch>

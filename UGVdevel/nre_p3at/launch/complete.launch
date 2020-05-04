@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find nre_p3at)/launch/base.launch"/>
+  <include file="$(find nre_p3at)/launch/tools.launch"/>
+  <include file="$(find nre_p3at)/launch/rviz.launch"/>
+
+  <node pkg="nre_p3at" type="teleopkeyboard.sh" name="teleop" 
+	output="screen"/>
+
+</launch>

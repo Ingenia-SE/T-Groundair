@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!-- 
+P3AT definition for Gazebo simultion suitable for multi-robot sim.
+Note the namespace (nsp) and tf_prefix (tfpre) are provided as 
+input arguments and then propogated appropriately.
+-->
+<robot name="p3at.xacro" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:arg name="nsp" default="p0" />
+  <xacro:arg name="tfpre" default="p0_tf" />
+ 
+<!-- This is the baseic robot model which is common.  Taken from AMR -->
+<xacro:include filename="$(find nre_p3at)/urdf/pioneer3at.urdf.xacro" />
+  
+<!-- Gazebo plugins which need to know namespace and tf_prefix information -->
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/$(arg nsp)</robotNamespace>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <commandTopic>my_p3at/cmd_vel</commandTopic>
+    <odometryTopic>my_p3at/odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <leftFrontJoint>p3at_front_left_wheel_joint</leftFrontJoint>
+    <rightFrontJoint>p3at_front_right_wheel_joint</rightFrontJoint>
+    <leftRearJoint>p3at_back_left_wheel_joint</leftRearJoint>
+    <rightRearJoint>p3at_back_right_wheel_joint</rightRearJoint>
+    <wheelSeparation>0.4</wheelSeparation>
+    <wheelDiameter>0.215</wheelDiameter>
+    <MaxForce>5.0</MaxForce>
+    <torque>200</torque>
+    <broadcastTF>1</broadcastTF>
+  </plugin>
+</gazebo>
+
+ <gazebo>
+    <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
+      <frameName>map</frameName>
+      <bodyName>base_link</bodyName>
+      <topicName>base_pose_ground_truth</topicName>
+      <updateRate>30.0</updateRate>
+    </plugin>
+  </gazebo>
+
+ <gazebo>
+    <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
+      <robotNamespace>/$(arg nsp)</robotNamespace>
+      <frameId>$(arg tfpre)/base_link</frameId>
+      <updateRate>50.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>imu/data</topicName>
+      <accelDrift>0.005 0.005 0.005</accelDrift>
+      <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+      <rateDrift>0.005 0.005 0.005 </rateDrift>
+      <rateGaussianNoise>0.005 0.005 0.005 </rateGaussianNoise>
+      <headingDrift>0.005</headingDrift>
+      <headingGaussianNoise>0.005</headingGaussianNoise>
+    </plugin>
+  </gazebo>
+  
+  <gazebo>
+    <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
+      <updateRate>40</updateRate>
+      <robotNamespace>/$(arg nsp)</robotNamespace>
+      <frameId>$(arg tfpre)/base_link</frameId>
+      <bodyName>base_link</bodyName>
+      <topicName>navsat/fix</topicName>
+      <velocityTopicName>navsat/vel</velocityTopicName>
+      <referenceLatitude>49.9</referenceLatitude>
+      <referenceLongitude>8.9</referenceLongitude>
+      <referenceHeading>0</referenceHeading>
+      <referenceAltitude>0</referenceAltitude>
+      <drift>0.0001 0.0001 0.0001</drift>
+    </plugin>
+  </gazebo>
+
+
+</robot>
