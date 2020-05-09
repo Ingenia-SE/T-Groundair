@@ -31,7 +31,7 @@
   <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find bebop_simulator)/models"/>
   <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find bebop_simulator)/models"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find bebop_simulator)/worlds/envV8.world" />
+    <arg name="world_name" value="$(find bebop_simulator)/worlds/envV9.world" />
   </include>
 
     <!-- Launch UAV -->
@@ -88,7 +88,9 @@
     <node name="waypoint_example" pkg="bebop_simulator" type="waypoint_example" output="screen" args="$(find bebop_simulator)/resource/waypoints.txt"/>  
     
 	<!-- Launch the trajectory generator -->
-    <node name="waypoints_publisher" pkg="bebop_simulator" type="waypoints_publisher" output="screen"/>       
+    <!--<node name="waypoints_publisher" pkg="bebop_simulator" type="waypoints_publisher" output="screen"/>    -->
+
+    <node name="interface" pkg="ros_gazebo_v1" type="interface" output="screen"/>   
 		 
     <!-- Launch the trajectory plot -->
    <group ns="$(arg plotName)" if="$(arg enable_plots)">
