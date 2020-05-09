@@ -1,0 +1,8 @@
+prefix=/home/alvaro/gazebo_ros_ws/src/ros_gazebo_v1/build/devel
+
+Name: ros_gazebo_v1
+Description: Description of ros_gazebo_v1
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp gazebo_ros
