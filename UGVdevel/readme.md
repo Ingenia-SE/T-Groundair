@@ -1,7 +1,7 @@
 Quickstart guide:
 
 >Follow tutorial to create catkin_ws http://wiki.ros.org/catkin/Tutorials/create_a_workspace
-
+> Remember to use source ~/catkin_ws/devel/setup.bash on **every** terminal window where you will run any modules
 Install AMR-ROS-CONFIG
 
 * cd ~/catkin_ws/src
@@ -28,3 +28,4 @@ Install ugv_controller
 Run programs
 * Run roslaunch /nre_p3at/launch/p3at.gazebo.launch
 * Run rosrun ugv_controller position_control.py
+* Run rosrun ugv_controller ugv_server.py
