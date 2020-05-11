@@ -6,4 +6,4 @@ The system requirements can be consulted both from the .pdf document and from th
 
 The pdf document can be opened with a pdf viewer like "Sumatra PDF" or "Adobe Reader".
 
-The SySML model has been developed in the "Eclipse" development environment and the "Papyrus. To consult it, it is only necessary to clone the project in its file directory and open it with the tools previously mentioned.
+The SySML model has been developed in the "Eclipse" development environment and the "Papyrus" add-on. To consult it, it is only necessary to clone the project in its file directory and open it with the tools previously mentioned.
