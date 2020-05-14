@@ -58,21 +58,18 @@ class StateMachine():
                         self.state = "moving"
                         self.targetX = newOrder.point.x
                         self.targetY = newOrder.point.y
-                        print("Received order to move")
                 except:
                     print("Error 1 reading message")
         elif self.state == "moving":
             if reachedTarget:
                 self.state = "waiting"
                 ugvStatus = 2
-                print("Reached target")
             elif orderReceived:
                 orderReceived = False
                 try:
                     newOrder = orderList.pop(0)
                     if newOrder.order == "stop":
                         self.state = "waiting"
-                        print("Shutdown order")
                 except:
                     print("Error 2 reading message")
 
@@ -80,18 +77,15 @@ class StateMachine():
     def action(self, orderList, x, y, theta):
         global reachedTarget
         if self.state == "waiting":
-            print("Waiting...")
             speed = Twist()
             speed.linear.x = 0.0
             speed.angular.z = 0.0
             self.pub.publish(speed)
         if self.state == "moving":
-            print("Moving...")
             inc_x = self.targetX - x
             inc_y = self.targetY - y
             angle_to_goal = math.atan2(inc_y, inc_x)
             error = math.sqrt(inc_x*inc_x+inc_y*inc_y)
-            print("Error is", error)
             speed = Twist()
             if abs(angle_to_goal-theta) > 0.1:
                 speed.linear.x = 0.0
@@ -100,11 +94,8 @@ class StateMachine():
             elif error > 0.31:
                 speed = self.pidControl(error)
                 speed.angular.z = 0.0
-                #speed.linear.x = 0.3
-                #speed.angular.z = 0.0
                 self.pub.publish(speed)
             else:
-                print("Reached")
                 self.started = False
                 self.ci = 0
                 reachedTarget = True
@@ -147,7 +138,6 @@ def newOdom(msg):
 
 def parseOrder(msg):
     global orderReceived, orderList
-    print("Receiving order")
     orderList = msg
     orderReceived = True
 
