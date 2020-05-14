@@ -202,7 +202,7 @@
   <Requirements:Requirement xmi:id="_WLTqIAlwEeqiyaaQ4dgl3Q" base_Class="_WLScAAlwEeqiyaaQ4dgl3Q" id="RFUA13" text="The UAV must be able to turn back to the initial point if it will be necessary."/>
   <Requirements:Requirement xmi:id="_eV_MkAlwEeqiyaaQ4dgl3Q" base_Class="_eV9-cAlwEeqiyaaQ4dgl3Q" id="RFUA14" text="The UAV must be able to send all the information about his position, battery level, speed and sensor lectures to the server."/>
   <Requirements:Requirement xmi:id="_m3pEpAlwEeqiyaaQ4dgl3Q" base_Class="_m3odgAlwEeqiyaaQ4dgl3Q" id="RFUA15" text="The UAV must be able to receive the information about his trajectory and new values for the actuators."/>
-  <Requirements:Requirement xmi:id="_wg5d0AlwEeqiyaaQ4dgl3Q" base_Class="_wg4PsAlwEeqiyaaQ4dgl3Q" id="RFUG16" text="The UAV must be able to control his acceleration and velocity depend of the operation that it is performing."/>
+  <Requirements:Requirement xmi:id="_wg5d0AlwEeqiyaaQ4dgl3Q" base_Class="_wg4PsAlwEeqiyaaQ4dgl3Q" id="RFUA16" text="The UAV must be able to control his acceleration and velocity depend of the operation that it is performing."/>
   <Requirements:DeriveReqt xmi:id="_Yyv7kAlyEeqiyaaQ4dgl3Q" base_DirectedRelationship="_YyutcAlyEeqiyaaQ4dgl3Q" base_Abstraction="_YyutcAlyEeqiyaaQ4dgl3Q"/>
   <Requirements:Requirement xmi:id="_CGRHIAlzEeqiyaaQ4dgl3Q" base_Class="_CGPR8AlzEeqiyaaQ4dgl3Q" id="RFUG01" text="The UGV must estimate its position all the time."/>
   <Requirements:Requirement xmi:id="_KxJzsglzEeqiyaaQ4dgl3Q" base_Class="_KxJMkAlzEeqiyaaQ4dgl3Q" id="RFUG02" text="The UGV must estimate its battery state all the time."/>
@@ -264,7 +264,7 @@
   <Requirements:Requirement xmi:id="_rFwXsA46Eeq-06HUUDh6BQ" base_Class="_rFvJkA46Eeq-06HUUDh6BQ" id="RNFER03 " text="UGV must have a maximum pick up time. In case the allowed time is exceeded, the UGV must skip that ball pickup and go for the next one."/>
   <Requirements:Requirement xmi:id="_QVC40A47Eeq-06HUUDh6BQ" base_Class="_QVBDoA47Eeq-06HUUDh6BQ" id="RNFUS01 " text="The artificial lightning should not interfere with the recognition system of the drone for locating the tennis balls in the court."/>
   <Requirements:Requirement xmi:id="_W32egA47Eeq-06HUUDh6BQ" base_Class="_W30pUA47Eeq-06HUUDh6BQ" id="RNFUS02 " text="A user manual should be made so that all the users of the system understand the way the system works."/>
-  <Requirements:Requirement xmi:id="_Ygw9EA47Eeq-06HUUDh6BQ" base_Class="_YgvH4A47Eeq-06HUUDh6BQ" id="RFNUS03 " text="If the UGV is too heavy, it must be transported in a kind of platform. This platform must be easy to use by the user."/>
+  <Requirements:Requirement xmi:id="_Ygw9EA47Eeq-06HUUDh6BQ" base_Class="_YgvH4A47Eeq-06HUUDh6BQ" id="RNFUS03 " text="If the UGV is too heavy, it must be transported in a kind of platform. This platform must be easy to use by the user."/>
   <Requirements:Requirement xmi:id="_avgFgA47Eeq-06HUUDh6BQ" base_Class="_aveQUA47Eeq-06HUUDh6BQ" id="RNFUS04" text="The server used to exchange the information between the UAV and the UGV must be easy to use and transport, such as a laptop."/>
   <Requirements:Requirement xmi:id="_h3TOoA47Eeq-06HUUDh6BQ" base_Class="_h3RZcA47Eeq-06HUUDh6BQ" id="RNFUS05 " text="The system should include indicators in order to inform the user about its status."/>
   <Requirements:Requirement xmi:id="_jk71IA47Eeq-06HUUDh6BQ" base_Class="_jk5_8A47Eeq-06HUUDh6BQ" id="RNFUS06 " text="The system controller must have a simple and complete interface."/>
