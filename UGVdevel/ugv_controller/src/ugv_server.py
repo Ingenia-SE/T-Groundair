@@ -6,71 +6,64 @@ import tf
 from geometry_msgs.msg import Twist, Vector3, Point
 from nav_msgs.msg import Odometry
 from ugv_controller.msg import Order
+from std_msgs.msg import Int16
 
-x = 0.0
-y = 0.0
-theta = 0.0
-idle = True
-targetX = 0.0
-targetY = 0.0
+# Store the waypoints we receive to send them to pos_controller
+xTarget = 0
+yTarget = 0
+# Store a flag to check if we've received a message
+orderReceived = False
+# Store the status of the ugv
+ugvStatus = 0
 
-def newOdom(msg):
-    global x
-    global y
-    global theta
+def parseWaypointSub(msg):
+    """Receive and store orders received from server"""
+    global xTarget, yTarget, orderReceived
+    xTarget = msg.x
+    yTarget = msg.y
+    orderReceived = True
 
-    x = msg.pose.pose.position.x
-    y = msg.pose.pose.position.y
+def sendWaypoint(publisher):
+    """Sends orders to the position controller"""
+    global xTarget, yTarget, orderReceived
+    if orderReceived:
+        orderReceived = False
+        order = Order()
+        order.order = "move"
+        order.point.x = xTarget
+        order.point.y = yTarget
+        order.point.z = 0.0
+        publisher.publish(order)
 
-    rot_q = msg.pose.pose.orientation
-    (roll, pitch, theta) = tf.transformations.euler_from_quaternion([rot_q.x, rot_q.y, rot_q.z, rot_q.w])
+def parseStatusSub(msg):
+    """Receive and store status from ugv controller"""
+    global ugvStatus
+    ugvStatus = msg.data
 
-def parseOrder(msg):
-    global targetX
-    global targetY
+def sendStatus(publisher):
+    """Send ugv status to server"""
+    global ugvStatus
+    status = Int16()
+    status.data = ugvStatus
+    publisher.publish(status)
 
-    idle = False
-    targetX = msg.point.x
-    targetY = msg.point.y    
-    
+# Initialize ROS node
 rospy.init_node("ugv_server")
 
-#sub = rospy.Subscriber("/pos_controller/orders", Order, parseOrder)
-pub = rospy.Publisher("/pos_controller/orders", Order, queue_size = 5)
+# Create a subscriber to receive waypoints from server
+waypointSub = rospy.subscriber("/ugv_waypoints", Point, parseWaypointSub)
+# Create a publisher to relay the waypoints received to the controller
+waypointPub = rospy.publish("/pos_controller/orders", Order, queue_size=5)
 
-#speed = Twist()
-r = rospy.Rate(4)
-#goal = Point()
-#goal.x = 5
-#goal.y = 5
+# Create a publisher to relay the status of the UGV to the server
+statusPub = rospy.publish("/ugv_check", Int16, queue_size=5)
+# Create a subscriber to receive status updates from the position controller
+statusSub = rospy.subscriber("/pos_controller/status", Int16, parseStatusSub)
+
+# Set looping rate
+rate = rospy.Rate(20)
 
 while not rospy.is_shutdown():
-    #inc_x = goal.x - x
-    #inc_y = goal.y - y
-    
-    #angle_to_goal = math.atan2(inc_y, inc_x)
-    #distance_to_goal = math.sqrt(inc_x*inc_x+inc_y*inc_y)
-
-    #if abs(angle_to_goal - theta) > 0.1:
-    #    speed.linear.x = 0.0
-    #    speed.angular.z = 0.3
-    #elif (distance_to_goal > 0.2):
-    #    speed.linear.x = 0.5
-    #    speed.angular.z = 0.0
-    #else:
-    #    speed.linear.x = 0.0
-    #    speed.angular.z = 0.0
-
-    #pub.publish(speed)
-    #r.sleep()
-    #rospy.sleep(10)
-    #if idle == True:
-   tst = Order()
-   tst.order = "move"
-   tst.point.x = 5.0
-   tst.point.y = 5.0
-   tst.point.z = 0.0
-   pub.publish(tst)
-   print("Publishing")
-   idle = False
-   r.sleep()
+    sendWaypoint(waypointPub)
+    sendStatus(statusPub)
+    rate.sleep()
