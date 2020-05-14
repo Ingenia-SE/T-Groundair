@@ -6,6 +6,7 @@ import tf
 from geometry_msgs.msg import Twist, Vector3, Point
 from nav_msgs.msg import Odometry
 from ugv_controller.msg import Order
+from std_msgs.msg import Int16
 
 x = 0.0
 y = 0.0
@@ -22,6 +23,8 @@ orderList = Order()
 targetX = 0.0
 targetY = 0.0
 
+# Variable to send UGV status
+ugvStatus = 0
 
 class StateMachine():
     def __init__(self):
@@ -40,8 +43,9 @@ class StateMachine():
         self.cd = 0
 
         self.started = False
-        
+
     def transition(self, orderList):
+        global ugvStatus
         global orderReceived
         global reachedTarget
         if self.state == "waiting":
@@ -50,6 +54,7 @@ class StateMachine():
                 try:
                     newOrder = orderList
                     if newOrder.order == "move":
+                        ugvStatus = 1
                         self.state = "moving"
                         self.targetX = newOrder.point.x
                         self.targetY = newOrder.point.y
@@ -58,8 +63,9 @@ class StateMachine():
                     print("Error 1 reading message")
         elif self.state == "moving":
             if reachedTarget:
-                self.state = "waiting" 
-                print("Reached target")               
+                self.state = "waiting"
+                ugvStatus = 2
+                print("Reached target")
             elif orderReceived:
                 orderReceived = False
                 try:
@@ -69,7 +75,7 @@ class StateMachine():
                         print("Shutdown order")
                 except:
                     print("Error 2 reading message")
-                          
+
 
     def action(self, orderList, x, y, theta):
         global reachedTarget
@@ -104,7 +110,7 @@ class StateMachine():
                 reachedTarget = True
 
     def pidControl(self, error):
-        
+
         if not self.started:
             self.previous_time = rospy.Time.now()
             self.started = True
@@ -122,11 +128,11 @@ class StateMachine():
         else:
             self.cd = 0
         speed.linear.x = self.kp*self.cp + self.ki*self.ci + self.kd*self.cd
-        
+
         self.previous_error = error
         self.previous_time = current_time
         return speed
-            
+
 
 def newOdom(msg):
     global x
@@ -143,41 +149,29 @@ def parseOrder(msg):
     global orderReceived, orderList
     print("Receiving order")
     orderList = msg
-    orderReceived = True   
-    
+    orderReceived = True
+
+def sendStatus(publisher):
+    """Send status to ugv_server"""
+    global ugvStatus
+    status = Int16()
+    status.data = ugvStatus
+    publisher.publish(status)
+
 rospy.init_node("pos_controller")
 
 orderSub = rospy.Subscriber("/sim_p3at/odom", Odometry, newOdom)
 posSub = rospy.Subscriber("/pos_controller/orders", Order, parseOrder)
-#pub = rospy.Publisher("/sim_p3at/cmd_vel", Twist, queue_size=1)
 
-#speed = Twist()
-r = rospy.Rate(4)
-#goal = Point()
-#goal.x = 5
-#goal.y = 5
+# Publisher to send ugvStatus to server
+statusPub = rospy.publisher("/pos_controller/status", Int16, queue_size=5)
+
+r = rospy.Rate(20)
 
 controlMachine = StateMachine()
-    
+
 while not rospy.is_shutdown():
-    #inc_x = goal.x - x
-    #inc_y = goal.y - y
-    
-    #angle_to_goal = math.atan2(inc_y, inc_x)
-    #distance_to_goal = math.sqrt(inc_x*inc_x+inc_y*inc_y)
-
-    #if abs(angle_to_goal - theta) > 0.1:
-    #    speed.linear.x = 0.0
-    #    speed.angular.z = 0.3
-    #elif (distance_to_goal > 0.2):
-    #    speed.linear.x = 0.5
-    #    speed.angular.z = 0.0
-    #else:
-    #    speed.linear.x = 0.0
-    #    speed.angular.z = 0.0
-
-    #pub.publish(speed)
-    #r.sleep()
     controlMachine.transition(orderList)
     controlMachine.action(orderList, x, y, theta)
-
+    sendStatus(ugvStatus)
+    r.sleep()

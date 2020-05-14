@@ -1,0 +1,142 @@
+[1mdiff --git a/UGVdevel/ugv_controller/src/position_control.py b/UGVdevel/ugv_controller/src/position_control.py[m
+[1mindex 9a7bb97..9a372d7 100755[m
+[1m--- a/UGVdevel/ugv_controller/src/position_control.py[m
+[1m+++ b/UGVdevel/ugv_controller/src/position_control.py[m
+[36m@@ -6,6 +6,7 @@[m [mimport tf[m
+ from geometry_msgs.msg import Twist, Vector3, Point[m
+ from nav_msgs.msg import Odometry[m
+ from ugv_controller.msg import Order[m
+[32m+[m[32mfrom std_msgs.msg import Int16[m
+ [m
+ x = 0.0[m
+ y = 0.0[m
+[36m@@ -22,6 +23,8 @@[m [morderList = Order()[m
+ targetX = 0.0[m
+ targetY = 0.0[m
+ [m
+[32m+[m[32m# Variable to send UGV status[m
+[32m+[m[32mugvStatus = 0[m
+ [m
+ class StateMachine():[m
+     def __init__(self):[m
+[36m@@ -40,8 +43,9 @@[m [mclass StateMachine():[m
+         self.cd = 0[m
+ [m
+         self.started = False[m
+[31m-        [m
+[32m+[m
+     def transition(self, orderList):[m
+[32m+[m[32m        global ugvStatus[m
+         global orderReceived[m
+         global reachedTarget[m
+         if self.state == "waiting":[m
+[36m@@ -50,6 +54,7 @@[m [mclass StateMachine():[m
+                 try:[m
+                     newOrder = orderList[m
+                     if newOrder.order == "move":[m
+[32m+[m[32m                        ugvStatus = 1[m
+                         self.state = "moving"[m
+                         self.targetX = newOrder.point.x[m
+                         self.targetY = newOrder.point.y[m
+[36m@@ -58,8 +63,9 @@[m [mclass StateMachine():[m
+                     print("Error 1 reading message")[m
+         elif self.state == "moving":[m
+             if reachedTarget:[m
+[31m-                self.state = "waiting" [m
+[31m-                print("Reached target")               [m
+[32m+[m[32m                self.state = "waiting"[m
+[32m+[m[32m                ugvStatus = 2[m
+[32m+[m[32m                print("Reached target")[m
+             elif orderReceived:[m
+                 orderReceived = False[m
+                 try:[m
+[36m@@ -69,7 +75,7 @@[m [mclass StateMachine():[m
+                         print("Shutdown order")[m
+                 except:[m
+                     print("Error 2 reading message")[m
+[31m-                          [m
+[32m+[m
+ [m
+     def action(self, orderList, x, y, theta):[m
+         global reachedTarget[m
+[36m@@ -104,7 +110,7 @@[m [mclass StateMachine():[m
+                 reachedTarget = True[m
+ [m
+     def pidControl(self, error):[m
+[31m-        [m
+[32m+[m
+         if not self.started:[m
+             self.previous_time = rospy.Time.now()[m
+             self.started = True[m
+[36m@@ -122,11 +128,11 @@[m [mclass StateMachine():[m
+         else:[m
+             self.cd = 0[m
+         speed.linear.x = self.kp*self.cp + self.ki*self.ci + self.kd*self.cd[m
+[31m-        [m
+[32m+[m
+         self.previous_error = error[m
+         self.previous_time = current_time[m
+         return speed[m
+[31m-            [m
+[32m+[m
+ [m
+ def newOdom(msg):[m
+     global x[m
+[36m@@ -143,41 +149,29 @@[m [mdef parseOrder(msg):[m
+     global orderReceived, orderList[m
+     print("Receiving order")[m
+     orderList = msg[m
+[31m-    orderReceived = True   [m
+[31m-    [m
+[32m+[m[32m    orderReceived = True[m
+[32m+[m
+[32m+[m[32mdef sendStatus(publisher):[m
+[32m+[m[32m    """Send status to ugv_server"""[m
+[32m+[m[32m    global ugvStatus[m
+[32m+[m[32m    status = Int16()[m
+[32m+[m[32m    status.data = ugvStatus[m
+[32m+[m[32m    publisher.publish(status)[m
+[32m+[m
+ rospy.init_node("pos_controller")[m
+ [m
+ orderSub = rospy.Subscriber("/sim_p3at/odom", Odometry, newOdom)[m
+ posSub = rospy.Subscriber("/pos_controller/orders", Order, parseOrder)[m
+[31m-#pub = rospy.Publisher("/sim_p3at/cmd_vel", Twist, queue_size=1)[m
+ [m
+[31m-#speed = Twist()[m
+[31m-r = rospy.Rate(4)[m
+[31m-#goal = Point()[m
+[31m-#goal.x = 5[m
+[31m-#goal.y = 5[m
+[32m+[m[32m# Publisher to send ugvStatus to server[m
+[32m+[m[32mstatusPub = rospy.publisher("/pos_controller/status", Int16, queue_size=5)[m
+[32m+[m
+[32m+[m[32mr = rospy.Rate(20)[m
+ [m
+ controlMachine = StateMachine()[m
+[31m-    [m
+[32m+[m
+ while not rospy.is_shutdown():[m
+[31m-    #inc_x = goal.x - x[m
+[31m-    #inc_y = goal.y - y[m
+[31m-    [m
+[31m-    #angle_to_goal = math.atan2(inc_y, inc_x)[m
+[31m-    #distance_to_goal = math.sqrt(inc_x*inc_x+inc_y*inc_y)[m
+[31m-[m
+[31m-    #if abs(angle_to_goal - theta) > 0.1:[m
+[31m-    #    speed.linear.x = 0.0[m
+[31m-    #    speed.angular.z = 0.3[m
+[31m-    #elif (distance_to_goal > 0.2):[m
+[31m-    #    speed.linear.x = 0.5[m
+[31m-    #    speed.angular.z = 0.0[m
+[31m-    #else:[m
+[31m-    #    speed.linear.x = 0.0[m
+[31m-    #    speed.angular.z = 0.0[m
+[31m-[m
+[31m-    #pub.publish(speed)[m
+[31m-    #r.sleep()[m
+     controlMachine.transition(orderList)[m
+     controlMachine.action(orderList, x, y, theta)[m
+[31m-[m
+[32m+[m[32m    sendStatus(ugvStatus)[m
+[32m+[m[32m    r.sleep()[m
