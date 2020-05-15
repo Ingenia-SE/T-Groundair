@@ -163,5 +163,5 @@ controlMachine = StateMachine()
 while not rospy.is_shutdown():
     controlMachine.transition(orderList)
     controlMachine.action(orderList, x, y, theta)
-    sendStatus(ugvStatus)
+    sendStatus(statusPub)
     r.sleep()
