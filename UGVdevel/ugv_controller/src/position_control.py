@@ -154,7 +154,7 @@ orderSub = rospy.Subscriber("/sim_p3at/odom", Odometry, newOdom)
 posSub = rospy.Subscriber("/pos_controller/orders", Order, parseOrder)
 
 # Publisher to send ugvStatus to server
-statusPub = rospy.publisher("/pos_controller/status", Int16, queue_size=5)
+statusPub = rospy.Publisher("/pos_controller/status", Int16, queue_size=5)
 
 r = rospy.Rate(20)
 
