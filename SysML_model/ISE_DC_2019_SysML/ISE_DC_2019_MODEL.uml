@@ -7,7 +7,70 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_zQTOYCphEeqPi4A2GyO_zw">
       <importedPackage xmi:type="uml:Package" href="pathmap://SysML14_LIBRARIES/SysML-Standard-Library.uml#SysML.package_packagedElement_Libraries"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Package" xmi:id="_4dQmACpiEeqZ_MKDNlQ9FQ" name="T-Groundair">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_tRpA8JW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Package" href="pathmap://SysML14_LIBRARIES/SysML-Standard-Library.uml#SysML.package_packagedElement_Libraries"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v47zUJW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v4-PkJW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Activities"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v4-PkZW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Allocations"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v4-2oJW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Blocks"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v4-2oZW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ConstraintBlocks"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v4-2opW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_DeprecatedElements"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v4-2o5W0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ModelElements"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v4-2pJW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Ports_u0026Flows"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_v4-2pZW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Requirements"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xqlXIJW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xqmlQJW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Activities"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xqmlQZW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Allocations"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xqmlQpW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Blocks"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xqmlQ5W0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ConstraintBlocks"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xqnMUJW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_DeprecatedElements"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xqnMUZW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_ModelElements"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xqnMUpW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Ports_u0026Flows"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_xqnMU5W0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://SysML14_PROFILES/SysML.profile.uml#SysML.package_packagedElement_Requirements"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_zvyJEJW0EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Package" href="pathmap://SysML14_LIBRARIES/SysML-Standard-Library.uml#SysML.package_packagedElement_Libraries"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_ImtUoJW1EeqVGITig8wkAg">
+      <importedPackage xmi:type="uml:Model" href="SyRS_GASPORTS.uml#_-2UDAAlWEeqiyaaQ4dgl3Q"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_4dQmACpiEeqZ_MKDNlQ9FQ" name="T-Groundair System">
       <packagedElement xmi:type="uml:Package" xmi:id="_5l_vsCpiEeqZ_MKDNlQ9FQ" name="UGV">
         <packagedElement xmi:type="uml:Package" xmi:id="_0h2RoCpoEeqZ_MKDNlQ9FQ" name="Specific requirements"/>
         <packagedElement xmi:type="uml:Package" xmi:id="_0yjnICpoEeqZ_MKDNlQ9FQ" name="Hardware">
@@ -722,9 +785,23 @@ EXCEPT The UAV that should first GO HOME&#xD;
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_gHUZECpmEeqZ_MKDNlQ9FQ" name="Simulation"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_gw7WwCpmEeqZ_MKDNlQ9FQ" name="Stakeholders"/>
-    <packagedElement xmi:type="uml:Package" xmi:id="_hMreoCpmEeqZ_MKDNlQ9FQ" name="Requirements"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_hMreoCpmEeqZ_MKDNlQ9FQ" name="Requirements">
+      <packagedElement xmi:type="uml:Package" xmi:id="_M6gM4JU4EequrbVENDbY_Q" name="Functional requirements">
+        <packagedElement xmi:type="uml:Package" xmi:id="_c6xykJU4EequrbVENDbY_Q" name="System"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_gHMEMJU4EequrbVENDbY_Q" name="UAV"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_hEZ6YJU4EequrbVENDbY_Q" name="UGV"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_iS3RkJU4EequrbVENDbY_Q" name="SRV"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_WMbrQJU4EequrbVENDbY_Q" name="Non-functional Requirements">
+        <packagedElement xmi:type="uml:Package" xmi:id="_p_xS4JU4EequrbVENDbY_Q" name="Performance"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_sab-gJU4EequrbVENDbY_Q" name="Security and Safety"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_uefg8JU4EequrbVENDbY_Q" name="Error Handling"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_wkRhsJU4EequrbVENDbY_Q" name="Usability"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_yQWB8JU4EequrbVENDbY_Q" name="Reliability and Availability"/>
+      </packagedElement>
+    </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_hobmgCpmEeqZ_MKDNlQ9FQ" name="Model library"/>
-    <packagedElement xmi:type="uml:Package" xmi:id="_4q1LICpmEeqZ_MKDNlQ9FQ" name="Use cases">
+    <packagedElement xmi:type="uml:Package" xmi:id="_4q1LICpmEeqZ_MKDNlQ9FQ" name="Real world use cases">
       <packagedElement xmi:type="uml:Package" xmi:id="_GuujsCpnEeqZ_MKDNlQ9FQ" name="Maintenance"/>
       <packagedElement xmi:type="uml:Package" xmi:id="_KcZIQCpnEeqZ_MKDNlQ9FQ" name="Testing"/>
       <packagedElement xmi:type="uml:Package" xmi:id="_KnJmwCpnEeqZ_MKDNlQ9FQ" name="Real situations"/>
