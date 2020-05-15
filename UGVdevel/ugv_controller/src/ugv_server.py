@@ -51,14 +51,14 @@ def sendStatus(publisher):
 rospy.init_node("ugv_server")
 
 # Create a subscriber to receive waypoints from server
-waypointSub = rospy.subscriber("/ugv_waypoints", Point, parseWaypointSub)
+waypointSub = rospy.Subscriber("/ugv_waypoints", Point, parseWaypointSub)
 # Create a publisher to relay the waypoints received to the controller
-waypointPub = rospy.publish("/pos_controller/orders", Order, queue_size=5)
+waypointPub = rospy.Publisher("/pos_controller/orders", Order, queue_size=5)
 
 # Create a publisher to relay the status of the UGV to the server
-statusPub = rospy.publish("/ugv_check", Int16, queue_size=5)
+statusPub = rospy.Publisher("/ugv_check", Int16, queue_size=5)
 # Create a subscriber to receive status updates from the position controller
-statusSub = rospy.subscriber("/pos_controller/status", Int16, parseStatusSub)
+statusSub = rospy.Subscriber("/pos_controller/status", Int16, parseStatusSub)
 
 # Set looping rate
 rate = rospy.Rate(20)
