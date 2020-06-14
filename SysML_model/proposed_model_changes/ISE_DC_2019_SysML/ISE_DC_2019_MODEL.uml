@@ -279,30 +279,45 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_1GBVsCpoEeqZ_MKDNlQ9FQ" name="Specific use cases">
           <packagedElement xmi:type="uml:Package" xmi:id="_dLDG0IiNEeq4E-AnvMbeCg" name="Normal functioning">
-            <packagedElement xmi:type="uml:Activity" xmi:id="_sm2GcIiNEeq4E-AnvMbeCg" name="Normal functioning" node="_3K4s8IiNEeq4E-AnvMbeCg _5JqGwIiNEeq4E-AnvMbeCg _8sMZYIiNEeq4E-AnvMbeCg _CZodUIiOEeq4E-AnvMbeCg _Czr8EIiOEeq4E-AnvMbeCg _DK_BwIiOEeq4E-AnvMbeCg _DltO4IiOEeq4E-AnvMbeCg _D8-p8IiPEeq4E-AnvMbeCg _twC4QIiPEeq4E-AnvMbeCg">
+            <packagedElement xmi:type="uml:Activity" xmi:id="_sm2GcIiNEeq4E-AnvMbeCg" name="Normal functioning" node="_5JqGwIiNEeq4E-AnvMbeCg _8sMZYIiNEeq4E-AnvMbeCg _CZodUIiOEeq4E-AnvMbeCg _Czr8EIiOEeq4E-AnvMbeCg _DK_BwIiOEeq4E-AnvMbeCg _DltO4IiOEeq4E-AnvMbeCg _D8-p8IiPEeq4E-AnvMbeCg _twC4QIiPEeq4E-AnvMbeCg _pz5y8K4XEeqmPLobNJ08UA">
               <edge xmi:type="uml:ControlFlow" xmi:id="_afYf4IiPEeq4E-AnvMbeCg" target="_P-ZNYIiPEeq4E-AnvMbeCg" source="_5JqGwIiNEeq4E-AnvMbeCg"/>
               <edge xmi:type="uml:ControlFlow" xmi:id="_ddoZsIiPEeq4E-AnvMbeCg" target="_Czr8EIiOEeq4E-AnvMbeCg" source="_CZodUIiOEeq4E-AnvMbeCg"/>
-              <edge xmi:type="uml:ControlFlow" xmi:id="_eojUsIiPEeq4E-AnvMbeCg" target="_DltO4IiOEeq4E-AnvMbeCg" source="_Czr8EIiOEeq4E-AnvMbeCg"/>
-              <edge xmi:type="uml:ControlFlow" xmi:id="_gZa1YIiPEeq4E-AnvMbeCg" target="_DK_BwIiOEeq4E-AnvMbeCg" source="_DltO4IiOEeq4E-AnvMbeCg"/>
               <edge xmi:type="uml:ControlFlow" xmi:id="_YuIvQIiQEeq4E-AnvMbeCg" target="_S5WGIIiQEeq4E-AnvMbeCg" source="_qcHpYIiPEeq4E-AnvMbeCg"/>
-              <edge xmi:type="uml:ControlFlow" xmi:id="_dcLLsIiQEeq4E-AnvMbeCg" target="_3K4s8IiNEeq4E-AnvMbeCg" source="_bHi2oIiQEeq4E-AnvMbeCg"/>
               <edge xmi:type="uml:ControlFlow" xmi:id="_iPUKkIiQEeq4E-AnvMbeCg" target="_CZodUIiOEeq4E-AnvMbeCg" source="_8sMZYIiNEeq4E-AnvMbeCg"/>
               <edge xmi:type="uml:ControlFlow" xmi:id="_qpF48IiQEeq4E-AnvMbeCg" name="Initial position reached" target="_D8-p8IiPEeq4E-AnvMbeCg" source="_DK_BwIiOEeq4E-AnvMbeCg"/>
-              <node xmi:type="uml:ActivityParameterNode" xmi:id="_3K4s8IiNEeq4E-AnvMbeCg" name="Output to Server" incoming="_dcLLsIiQEeq4E-AnvMbeCg">
-                <upperBound xmi:type="uml:LiteralInteger" xmi:id="_3K7JMIiNEeq4E-AnvMbeCg" value="1"/>
-              </node>
+              <edge xmi:type="uml:ObjectFlow" xmi:id="_UriSEK4XEeqmPLobNJ08UA" target="_UriSE64XEeqmPLobNJ08UA" source="_UriSEa4XEeqmPLobNJ08UA">
+                <guard xmi:type="uml:LiteralBoolean" xmi:id="_UsJWEK4XEeqmPLobNJ08UA" value="true"/>
+                <weight xmi:type="uml:LiteralInteger" xmi:id="_UsJWEa4XEeqmPLobNJ08UA" value="1"/>
+              </edge>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_5SvfgK4XEeqmPLobNJ08UA" target="_pz5y8K4XEeqmPLobNJ08UA" source="_bHi2oIiQEeq4E-AnvMbeCg"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_W_BiMK4YEeqmPLobNJ08UA" target="_U8-K4K4YEeqmPLobNJ08UA" source="_pz5y8K4XEeqmPLobNJ08UA"/>
+              <edge xmi:type="uml:ControlFlow" xmi:id="_fSi3kK4YEeqmPLobNJ08UA" target="_ZMdqIK4YEeqmPLobNJ08UA" source="_pz5y8K4XEeqmPLobNJ08UA"/>
               <node xmi:type="uml:ActivityParameterNode" xmi:id="_5JqGwIiNEeq4E-AnvMbeCg" name="Input from Server" outgoing="_afYf4IiPEeq4E-AnvMbeCg">
                 <upperBound xmi:type="uml:LiteralInteger" xmi:id="_5Jr78IiNEeq4E-AnvMbeCg" value="1"/>
               </node>
               <node xmi:type="uml:InitialNode" xmi:id="_8sMZYIiNEeq4E-AnvMbeCg" name="Normal functioning" outgoing="_iPUKkIiQEeq4E-AnvMbeCg"/>
               <node xmi:type="uml:OpaqueAction" xmi:id="_CZodUIiOEeq4E-AnvMbeCg" name="UGV On / Stand by" incoming="_iPUKkIiQEeq4E-AnvMbeCg" outgoing="_ddoZsIiPEeq4E-AnvMbeCg">
-                <inputValue xmi:type="uml:ActionInputPin" xmi:id="_P-ZNYIiPEeq4E-AnvMbeCg" name="UGV Move order" incoming="_afYf4IiPEeq4E-AnvMbeCg">
+                <inputValue xmi:type="uml:ActionInputPin" xmi:id="_P-ZNYIiPEeq4E-AnvMbeCg" name="UGV Move order &amp; ball coordinates" incoming="_afYf4IiPEeq4E-AnvMbeCg">
                   <upperBound xmi:type="uml:LiteralInteger" xmi:id="_QNW2cIiPEeq4E-AnvMbeCg" value="1"/>
                 </inputValue>
+                <inputValue xmi:type="uml:InputPin" xmi:id="_U8-K4K4YEeqmPLobNJ08UA" name="LB = 0 &amp; new information given" incoming="_W_BiMK4YEeqmPLobNJ08UA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_U8-x8K4YEeqmPLobNJ08UA" value="1"/>
+                </inputValue>
               </node>
-              <node xmi:type="uml:OpaqueAction" xmi:id="_Czr8EIiOEeq4E-AnvMbeCg" name="UGV Move" incoming="_ddoZsIiPEeq4E-AnvMbeCg" outgoing="_eojUsIiPEeq4E-AnvMbeCg"/>
-              <node xmi:type="uml:OpaqueAction" xmi:id="_DK_BwIiOEeq4E-AnvMbeCg" name="UGV Return to original place" incoming="_gZa1YIiPEeq4E-AnvMbeCg" outgoing="_qpF48IiQEeq4E-AnvMbeCg"/>
-              <node xmi:type="uml:OpaqueAction" xmi:id="_DltO4IiOEeq4E-AnvMbeCg" name="Pick the ball" incoming="_eojUsIiPEeq4E-AnvMbeCg" outgoing="_gZa1YIiPEeq4E-AnvMbeCg">
+              <node xmi:type="uml:OpaqueAction" xmi:id="_Czr8EIiOEeq4E-AnvMbeCg" name="UGV Move" incoming="_ddoZsIiPEeq4E-AnvMbeCg">
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_UriSEa4XEeqmPLobNJ08UA" name="Ball reached" outgoing="_UriSEK4XEeqmPLobNJ08UA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_UriSEq4XEeqmPLobNJ08UA" value="1"/>
+                </outputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_DK_BwIiOEeq4E-AnvMbeCg" name="UGV Return to original place" outgoing="_qpF48IiQEeq4E-AnvMbeCg">
+                <inputValue xmi:type="uml:InputPin" xmi:id="_ZMdqIK4YEeqmPLobNJ08UA" name="LB = 1" incoming="_fSi3kK4YEeqmPLobNJ08UA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_ZMdqIa4YEeqmPLobNJ08UA" value="1"/>
+                </inputValue>
+              </node>
+              <node xmi:type="uml:OpaqueAction" xmi:id="_DltO4IiOEeq4E-AnvMbeCg" name="Pick the ball">
+                <inputValue xmi:type="uml:InputPin" xmi:id="_UriSE64XEeqmPLobNJ08UA" name="" incoming="_UriSEK4XEeqmPLobNJ08UA">
+                  <upperBound xmi:type="uml:LiteralInteger" xmi:id="_Urq08K4XEeqmPLobNJ08UA" value="1"/>
+                </inputValue>
                 <outputValue xmi:type="uml:OutputPin" xmi:id="_qcHpYIiPEeq4E-AnvMbeCg" name="Ball picked" outgoing="_YuIvQIiQEeq4E-AnvMbeCg">
                   <upperBound xmi:type="uml:LiteralInteger" xmi:id="_qcIQcIiPEeq4E-AnvMbeCg" value="1"/>
                 </outputValue>
@@ -312,10 +327,11 @@
                 <inputValue xmi:type="uml:ActionInputPin" xmi:id="_S5WGIIiQEeq4E-AnvMbeCg" name="Ball" incoming="_YuIvQIiQEeq4E-AnvMbeCg">
                   <upperBound xmi:type="uml:LiteralInteger" xmi:id="_S5WtMIiQEeq4E-AnvMbeCg" value="1"/>
                 </inputValue>
-                <outputValue xmi:type="uml:OutputPin" xmi:id="_bHi2oIiQEeq4E-AnvMbeCg" name="Data" outgoing="_dcLLsIiQEeq4E-AnvMbeCg">
+                <outputValue xmi:type="uml:OutputPin" xmi:id="_bHi2oIiQEeq4E-AnvMbeCg" name="Data to SRV" outgoing="_5SvfgK4XEeqmPLobNJ08UA">
                   <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bHjdsIiQEeq4E-AnvMbeCg" value="1"/>
                 </outputValue>
               </node>
+              <node xmi:type="uml:DecisionNode" xmi:id="_pz5y8K4XEeqmPLobNJ08UA" name="Last ball?" incoming="_5SvfgK4XEeqmPLobNJ08UA" outgoing="_W_BiMK4YEeqmPLobNJ08UA _fSi3kK4YEeqmPLobNJ08UA"/>
             </packagedElement>
           </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="_evy3EIiNEeq4E-AnvMbeCg" name="Emergency operation">
