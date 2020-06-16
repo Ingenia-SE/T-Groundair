@@ -17,37 +17,37 @@ ugvStatus = 0
 
 def parseWaypointSub(msg):
 """Receive and store orders received from server"""
-global xTarget, yTarget, orderReceived
-xTarget = msg.x
-yTarget = msg.y
-orderReceived = True
+    global xTarget, yTarget, orderReceived
+    xTarget = msg.x
+    yTarget = msg.y
+    orderReceived = True
 
 
 def sendWaypoint(publisher):
 """Sends orders to the position controller"""
-global xTarget, yTarget, orderReceived
-if orderReceived:
-orderReceived = False
-order = Order()
-order.order = "move"
-order.point.x = xTarget
-order.point.y = yTarget
-order.point.z = 0.614668
-publisher.publish(order)
+    global xTarget, yTarget, orderReceived
+    if orderReceived:
+        orderReceived = False
+        order = Order()
+        order.order = "move"
+        order.point.x = xTarget
+        order.point.y = yTarget
+        order.point.z = 0.614668
+        publisher.publish(order)
 
 
 def parseStatusSub(msg):
 """Receive and store status from ugv controller"""
-global ugvStatus
-ugvStatus = msg.data
+    global ugvStatus
+    ugvStatus = msg.data
 
 
 def sendStatus(publisher):
-"""Send ugv status to server"""
-global ugvStatus
-status = Int16()
-status.data = ugvStatus
-publisher.publish(status)
+    """Send ugv status to server"""
+    global ugvStatus
+    status = Int16()
+    status.data = ugvStatus
+    publisher.publish(status)
 # Initialize ROS node
 rospy.init_node("ugv_server")
 # Create a subscriber to receive waypoints from server
@@ -61,6 +61,6 @@ statusSub = rospy.Subscriber("/pos_controller/status", Int16, parseStatusSub)
 # Set looping rate
 rate = rospy.Rate(20)
 while not rospy.is_shutdown():
-sendWaypoint(waypointPub)
-sendStatus(statusPub)
-rate.sleep()
+    sendWaypoint(waypointPub)
+    sendStatus(statusPub)
+    rate.sleep()
