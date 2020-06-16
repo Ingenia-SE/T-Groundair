@@ -8,7 +8,7 @@ Follow next steps to install and run the simulation. Package include:
   - UGV controller
   - Server
 
-# 1. Instalation procedure
+# 1. Installation procedure
 1) Git clone INGENIA-SE repo and move software file into your ROS_WS
 2) Install dependencies:
     ```sh
