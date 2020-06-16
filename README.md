@@ -5,7 +5,7 @@ The Challenge of this project is to achieve an efficient cooperation between two
 
 This repository is structured in three main sections:
 
-- Requirements, where the system specifications and its validation procedures are defined.
+- Requirements, where the system specifications and their validation procedures are defined.
 - SysML Model, including the system's model for its characterization from different perspectives and also some guidelines for editing.
 - Software, containing the different software packages which are necessary for the simulation.
 
