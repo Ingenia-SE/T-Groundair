@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- This following lines are taken from the p2os_urdf package-->
+  <include file="$(find p2os_urdf)/launch/upload_pioneer3at.xml"/>
+  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0"/>
+    <param name="tf_prefix" type="string" value=""/>
+  </node>
+  <node pkg="p2os_urdf" type="p2os_publisher_3at" name="publisher"/>
+  
+  <!-- Now launch rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find nre_p3at)/rviz/p3at_base.rviz" output="screen"/>
+  <node pkg="nre_p3at" type="waypoint_course_rviz.py" name="waypoint" />
+</launch>
+

@@ -31,7 +31,7 @@
   <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find bebop_simulator)/models"/>
   <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find bebop_simulator)/models"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find bebop_simulator)/worlds/envV9.world" />
+    <arg name="world_name" value="$(find bebop_simulator)/worlds/envV14.world" />
   </include>
 
     <!-- Launch UAV -->
@@ -131,5 +131,15 @@
     <node name="angular_errors_plot" pkg="rqt_plot" type="rqt_plot" args="--clear-config /$(arg name)/angularAndAngularVelocityErrors/pose/pose/position" output="screen" />
     <node name="angular_velocity_errors_plot" pkg="rqt_plot" type="rqt_plot" args="--clear-config /$(arg name)/angularAndAngularVelocityErrors/twist/twist/linear" output="screen" />
    </group>
+
+   <arg name="urdf" default="$(find amr_robots_description)/urdf/pioneer3at.urdf.xacro" />
+   <param name="robot_description" command="$(find xacro)/xacro.py $(arg urdf)" />
+   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model pioneer3at" />
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <!-- nodo del ugv -->
+  <node name="ugv_node" pkg="ugv_controller" type="position_control.py" output="screen" />
+  <node name="ugv_server" pkg="ugv_controller" type="ugv_server.py" output="screen" />
 
 </launch>

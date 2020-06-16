@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Argumments-->
+  <arg name="leader" default="p2"/>
+  <arg name="follower" default="p5"/>
+  <arg name="xoffset" default="-2"/>
+  <arg name="size" default="2"/>
+
+  <!-- Add a robot description for each robot -->
+  <param name="robot_description_0" command="$(find xacro)/xacro.py $(find nre_p3at)/urdf/pioneer3at.xacro" />
+  <param name="robot_description_1" command="$(find xacro)/xacro.py $(find nre_p3at)/urdf/pioneer3at_green.xacro" />
+
+  <!-- Provide a static transform between the odom coordinates -->
+  <node pkg="tf" type="static_transform_publisher" name="odom_link_broadcaster_leader2follower" args="$(arg xoffset) 0 0 0 0 0 $(arg leader)/odom $(arg follower)/odom 100" />
+
+  <!-- Start RVIZ with appropriate config file -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find nre_p3at)/rviz/p3at_two.rviz" output="screen"/>
+
+  <!-- Generate some visual waypoints -->
+  <node pkg="nre_p3at" type="waypoint_course_rviz.py" name="waypoint" >
+    <param name="frame" value="p2/odom"/>
+    <param name="size" value="$(arg size)"/>
+  </node>
+</launch>
+
