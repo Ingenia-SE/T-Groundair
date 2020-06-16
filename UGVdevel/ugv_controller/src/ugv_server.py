@@ -16,12 +16,14 @@ orderReceived = False
 # Store the status of the ugv
 ugvStatus = 0
 
+
 def parseWaypointSub(msg):
     """Receive and store orders received from server"""
     global xTarget, yTarget, orderReceived
     xTarget = msg.x
     yTarget = msg.y
     orderReceived = True
+
 
 def sendWaypoint(publisher):
     """Sends orders to the position controller"""
@@ -35,10 +37,12 @@ def sendWaypoint(publisher):
         order.point.z = 0.614668
         publisher.publish(order)
 
+
 def parseStatusSub(msg):
     """Receive and store status from ugv controller"""
     global ugvStatus
     ugvStatus = msg.data
+
 
 def sendStatus(publisher):
     """Send ugv status to server"""
