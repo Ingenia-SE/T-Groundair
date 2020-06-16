@@ -32,7 +32,7 @@ def sendWaypoint(publisher):
         order.order = "move"
         order.point.x = xTarget
         order.point.y = yTarget
-        order.point.z = 0.0
+        order.point.z = 0.614668S
         publisher.publish(order)
 
 def parseStatusSub(msg):
