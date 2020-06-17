@@ -1,44 +1,13 @@
-Para probar esta versión del server, una vez hecho el make en el workspace y teniendo en un terminal roscore (01/05/2020):
+Testing server package ros_gazebo_v1 independently necessarily involves a catkin make instruction inside your workspace. Additionally, the route for the testing image file must be updated in src/drone.cc. Once this is done, two terminals must be opened for executing the following commands (one for each terminal):
 
-Se requiere abrir dos nuevos terminales y acceder al workspace.
-- En el primero de ellos, rosrun ros_gazebo_v1 interface [interfaz de usuario]
-- En el otro, roslaunch ros_gazebo_v1 environment_gazebo.launch [simulación de gazebo]
-
-De esta manera, se le enviará una orden a la caja que simula el dron para que envíe una imagen definida a la caja que actúa como server.
-Aquí se procesará, reconocerán y ubicarán las bolas y colocará la primera de la lista la bola más cercana al (0,0).
-Una vez concluido el proceso, se emitirán sendos mensajes de "Cycle ended".
-
-NOTA - También se debe:
-     - Dentro del workspace, colocar el archivo balls.h en la ruta devel/include/ros_gazebo_v1
-     - Actualizar dentro de src/drone.cc la ruta de la imagen de prueba
-
-## INGENIA-SE ROS package
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
-Here you can find ROS package for [INGENIA-SE project].
-Follow next steps to install and run the simulation. Package include:
-  - Enviroment
-  - UAV controller
-  - UGV controller
-  - Server
-
-# 1. Installation procedure
-1) Git clone INGENIA-SE repo and move software file into your ROS_WS
-2) Install dependencies:
+- Basic user interface:
     ```sh
-    $ rosdep install --from-paths src -i
+    $ rosrun ros_gazebo_v1 interface
     ```
-    In case you have another ROS_DISTRO, replace the word melodic with your DISTRO:
+    
+- Gazebo simulation:
     ```sh
-    $ rosdep install --from-paths src -i --rosdistro melodic --os=ubuntu:bionic
+    $ roslaunch ros_gazebo_v1 environment_gazebo.launch
     ```
-3) Build theworkspace
-    ```sh
-    $ catkin build
-    ```
-NOTES: Three pkgs will be ignored.
-# 2. Running simulation
-Despite it is a complex system based on multiple packages, simulation can be runned just with this command.
-```sh
-    $ roslaunch bebop_simulator simulation.launch
-```
+
+Doing so will result in an order to a box simulating the drone for sending the image to the box acting as server. It will be processed and the balls in the court will be ordered attending proximity criteria to the reference point (0,0). When the execution finishes correctly, messages communicating the end of the cycle will appear.
