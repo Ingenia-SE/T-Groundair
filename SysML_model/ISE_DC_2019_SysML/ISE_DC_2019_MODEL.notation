@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:nattable="http://www.eclipse.org/papyrus/nattable/model" xmlns:nattableaxis="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis" xmlns:nattableaxisprovider="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xsi:schemaLocation="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis http://www.eclipse.org/papyrus/nattable/model#//nattableaxis http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider http://www.eclipse.org/papyrus/nattable/model#//nattableaxisprovider">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:nattable="http://www.eclipse.org/papyrus/nattable/model" xmlns:nattableaxis="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis" xmlns:nattableaxisprovider="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider" xmlns:nattablestyle="http://www.eclipse.org/papyrus/nattable/model/table/nattablestyle" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xsi:schemaLocation="http://www.eclipse.org/papyrus/nattable/model/table/nattableaxis http://www.eclipse.org/papyrus/nattable/model#//nattableaxis http://www.eclipse.org/papyrus/nattable/model/table/nattableaxisprovider http://www.eclipse.org/papyrus/nattable/model#//nattableaxisprovider http://www.eclipse.org/papyrus/nattable/model/table/nattablestyle http://www.eclipse.org/papyrus/nattable/model#//nattablestyle">
   <notation:Diagram xmi:id="_21ev4CpiEeqZ_MKDNlQ9FQ" type="PapyrusUMLClassDiagram" name="ISE_DC_2019_MODEL" measurementUnit="Pixel">
     <children xsi:type="notation:Shape" xmi:id="_4dX6wCpiEeqZ_MKDNlQ9FQ" type="Package_Shape">
       <children xsi:type="notation:DecorationNode" xmi:id="_4dzYkCpiEeqZ_MKDNlQ9FQ" type="Package_NameLabel"/>
@@ -80,6 +80,31 @@
       <layoutConstraint xsi:type="notation:Bounds" xmi:id="_gHafsSpmEeqZ_MKDNlQ9FQ" x="80" y="80" width="141" height="81"/>
     </children>
     <children xsi:type="notation:Shape" xmi:id="_gw9L8CpmEeqZ_MKDNlQ9FQ" type="Package_Shape_CN">
+      <eAnnotations xmi:id="_cx6yELCCEeqVkqK74weuNQ" source="PapyrusHyperLink_Object">
+        <details xmi:id="_cx6yEbCCEeqVkqK74weuNQ" key="tooltip_text"/>
+        <details xmi:id="_cx6yErCCEeqVkqK74weuNQ" key="pageName" value="PapyrusHyperLink_Object"/>
+        <details xmi:id="_cx6yE7CCEeqVkqK74weuNQ" key="is_default_navigation" value="true"/>
+      </eAnnotations>
+      <eAnnotations xmi:id="_I5ahILCDEeqVkqK74weuNQ" source="PapyrusHyperLink_Object">
+        <details xmi:id="_I5ahIbCDEeqVkqK74weuNQ" key="tooltip_text"/>
+        <details xmi:id="_I5ahIrCDEeqVkqK74weuNQ" key="pageName" value="PapyrusHyperLink_Object"/>
+        <details xmi:id="_I5ahI7CDEeqVkqK74weuNQ" key="is_default_navigation" value="true"/>
+      </eAnnotations>
+      <eAnnotations xmi:id="_62g8MLCEEeqVkqK74weuNQ" source="PapyrusHyperLink_Object">
+        <details xmi:id="_62g8MbCEEeqVkqK74weuNQ" key="tooltip_text"/>
+        <details xmi:id="_62g8MrCEEeqVkqK74weuNQ" key="pageName" value="PapyrusHyperLink_Object"/>
+        <details xmi:id="_62g8M7CEEeqVkqK74weuNQ" key="is_default_navigation" value="true"/>
+      </eAnnotations>
+      <eAnnotations xmi:id="_QHOgwLCFEeqVkqK74weuNQ" source="PapyrusHyperLink_Object">
+        <details xmi:id="_QHOgwbCFEeqVkqK74weuNQ" key="tooltip_text"/>
+        <details xmi:id="_QHOgwrCFEeqVkqK74weuNQ" key="pageName" value="PapyrusHyperLink_Object"/>
+        <details xmi:id="_QHOgw7CFEeqVkqK74weuNQ" key="is_default_navigation" value="true"/>
+      </eAnnotations>
+      <eAnnotations xmi:id="_RCxRELCHEeqVkqK74weuNQ" source="PapyrusHyperLink_Object" references="_Q-a8kLCHEeqVkqK74weuNQ">
+        <details xmi:id="_RCxREbCHEeqVkqK74weuNQ" key="tooltip_text"/>
+        <details xmi:id="_RCxRErCHEeqVkqK74weuNQ" key="pageName" value="PapyrusHyperLink_Object"/>
+        <details xmi:id="_RCxRE7CHEeqVkqK74weuNQ" key="is_default_navigation" value="true"/>
+      </eAnnotations>
       <children xsi:type="notation:DecorationNode" xmi:id="_gw9L8ipmEeqZ_MKDNlQ9FQ" type="Package_NameLabel_CN"/>
       <children xsi:type="notation:BasicCompartment" xmi:id="_gw9L8ypmEeqZ_MKDNlQ9FQ" type="Package_PackagedElementCompartment_CN">
         <styles xsi:type="notation:TitleStyle" xmi:id="_gw9L9CpmEeqZ_MKDNlQ9FQ"/>
@@ -7721,4 +7746,99 @@
     </styles>
     <element href="ISE_DC_2019_MODEL.uml#_hMreoCpmEeqZ_MKDNlQ9FQ"/>
   </notation:Diagram>
+  <nattable:Table xmi:id="_Q-a8kLCHEeqVkqK74weuNQ" name="Stakeholders list" currentRowAxisProvider="_Q-a8krCHEeqVkqK74weuNQ" currentColumnAxisProvider="_Q-a8kbCHEeqVkqK74weuNQ" tableKindId="org.eclipse.papyrus.uml.table.generic">
+    <eAnnotations xmi:id="_Q-dY0LCHEeqVkqK74weuNQ" source="http://www.eclipse.org/papyrus/infra/nattable/version">
+      <details xmi:id="_Q-dY0bCHEeqVkqK74weuNQ" key="version" value="1.3.0"/>
+    </eAnnotations>
+    <context href="ISE_DC_2019_MODEL.uml#_gw7WwCpmEeqZ_MKDNlQ9FQ"/>
+    <owner href="ISE_DC_2019_MODEL.uml#_gw7WwCpmEeqZ_MKDNlQ9FQ"/>
+    <tableConfiguration href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#PapyrusGenericTable_XMI_ID"/>
+    <columnAxisProvidersHistory xsi:type="nattableaxisprovider:SlaveObjectAxisProvider" xmi:id="_Q-a8kbCHEeqVkqK74weuNQ" description="This axis provider provides available columns according to the rows of the table (features of the object displayed on the other axis)" name="UML Feature axis provider">
+      <axis xsi:type="nattableaxis:EStructuralFeatureAxis" xmi:id="_RtMuJ7CHEeqVkqK74weuNQ">
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFFDzQEei_1txcmoHe_A"/>
+        <element xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/ownedComment"/>
+      </axis>
+    </columnAxisProvidersHistory>
+    <rowAxisProvidersHistory xsi:type="nattableaxisprovider:MasterObjectAxisProvider" xmi:id="_Q-a8krCHEeqVkqK74weuNQ" description="This axis provider contains the object dropped by the user into the table" name="DroppedElementAxisProvider">
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_RtMuILCHEeqVkqK74weuNQ">
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_RtK48LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_S-cTkLCHEeqVkqK74weuNQ">
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_S-Z3ULCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_eYYnULCHEeqVkqK74weuNQ">
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_eYU88LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_iHxqMLCHEeqVkqK74weuNQ">
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_iHvN8LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_i2vpALCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_rAnBMLCJEeqVkqK74weuNQ" name="axisHeight" intValue="31"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_i2tz0LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_jvpm8LCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_oqHD4LCJEeqVkqK74weuNQ" name="axisHeight" intValue="30"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_jvoY0LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_kiL3ILCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_jqqHULCJEeqVkqK74weuNQ" name="axisHeight" intValue="28"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_kiKB8LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_lJ27ILCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_jpykoLCJEeqVkqK74weuNQ" name="axisHeight"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_lJ1F8LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_lyav8LCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_jp22ELCJEeqVkqK74weuNQ" name="axisHeight" intValue="30"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_lyZh0LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_mj8TgLCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_jrAFkLCJEeqVkqK74weuNQ" name="axisHeight"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_mj7FYLCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_naCOALCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_jihfALCJEeqVkqK74weuNQ" name="axisHeight" intValue="29"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_naAY0LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_oEQ2wLCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_jilJYLCJEeqVkqK74weuNQ" name="axisHeight" intValue="29"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_oEPBkLCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_owC-sLCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_jiozwLCJEeqVkqK74weuNQ" name="axisHeight" intValue="28"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_owBwkLCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_pmp2kLCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_1sHMgLCHEeqVkqK74weuNQ" name="axisHeight" intValue="30"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_pmoBYLCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_qaS6ALCHEeqVkqK74weuNQ">
+        <styles xsi:type="nattablestyle:IntValueStyle" xmi:id="_1sdx0LCHEeqVkqK74weuNQ" name="axisHeight" intValue="28"/>
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_qaRr4LCHEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_rUkCgLCKEeqVkqK74weuNQ">
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_rUi0YLCKEeqVkqK74weuNQ"/>
+      </axis>
+      <axis xsi:type="nattableaxis:EObjectAxis" xmi:id="_sWeLcLCKEeqVkqK74weuNQ">
+        <manager href="platform:/plugin/org.eclipse.papyrus.uml.nattable.generic.config/configs/generic.nattableconfiguration#_P0EFEDzQEei_1txcmoHe_A"/>
+        <element href="ISE_DC_2019_MODEL.uml#_sWcWQLCKEeqVkqK74weuNQ"/>
+      </axis>
+    </rowAxisProvidersHistory>
+  </nattable:Table>
 </xmi:XMI>

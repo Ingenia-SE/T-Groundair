@@ -800,7 +800,101 @@ EXCEPT The UAV that should first GO HOME&#xD;
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_gHUZECpmEeqZ_MKDNlQ9FQ" name="Simulation"/>
-    <packagedElement xmi:type="uml:Package" xmi:id="_gw7WwCpmEeqZ_MKDNlQ9FQ" name="Stakeholders"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_gw7WwCpmEeqZ_MKDNlQ9FQ" name="Stakeholders">
+      <packagedElement xmi:type="uml:Actor" xmi:id="_SkBv0LCEEeqVkqK74weuNQ" name="Actor1" visibility="public"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_71AkwLCEEeqVkqK74weuNQ" name="Actor2"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_Q0BVULCFEeqVkqK74weuNQ" name="Actor3"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_RtK48LCHEeqVkqK74weuNQ" name="Ricardo Sanz">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_UYBgMLCIEeqVkqK74weuNQ" annotatedElement="_RtK48LCHEeqVkqK74weuNQ">
+          <body>Client and supervisor. He will be the main stakeholder in our organization. He can propose measures and changes in the organization of work to adapt the product to the requirements. </body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_S-Z3ULCHEeqVkqK74weuNQ" name="ETSII-UPM">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_k18rMLCIEeqVkqK74weuNQ" annotatedElement="_S-Z3ULCHEeqVkqK74weuNQ">
+          <body>An important stakeholder. The project is developed in its facilities. Noise and safety measures must be included in the project and we will have to take it into account. CAR will also be important as they are providing us UAV and UGV</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_eYU88LCHEeqVkqK74weuNQ" name="C.D. Industriales">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_sSJ-ELCIEeqVkqK74weuNQ" annotatedElement="_eYU88LCHEeqVkqK74weuNQ">
+          <body>Tests that will be carried out with the drones and collecting the tennis balls, will take place on the tennis court of the ETSII-UPM. The organization in charge of giving permission for that and transmitting the available schedules of the track is the C. Industriales, so it is also a stakeholder to be counted on.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_iHvN8LCHEeqVkqK74weuNQ" name="GASS Team">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_0k1l8LCIEeqVkqK74weuNQ" annotatedElement="_iHvN8LCHEeqVkqK74weuNQ">
+          <body>The internal measures taken in the organization about how to meet the requirements of the product and improve them will be taken by the entire team involved in the project, being the last decision taken by the PM (project manager).</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_i2tz0LCHEeqVkqK74weuNQ" name="Tennis players">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_6TLo0LCIEeqVkqK74weuNQ" annotatedElement="_i2tz0LCHEeqVkqK74weuNQ">
+          <body>The customer, they are the ones to be satisfied with what the organization offers.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_jvoY0LCHEeqVkqK74weuNQ" name="Tennis Clubs">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_9-CxALCIEeqVkqK74weuNQ" annotatedElement="_jvoY0LCHEeqVkqK74weuNQ">
+          <body>In the future, we can try that clients are not only individual players, but also groups such as tennis clubs that provide us with a wider market.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_kiKB8LCHEeqVkqK74weuNQ" name="Coaches">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_B0xyALCJEeqVkqK74weuNQ" annotatedElement="_kiKB8LCHEeqVkqK74weuNQ">
+          <body>Coaches can change the way they approach training thanks to the help of the technology offered by this system, which focuses on obtaining the best result from the player.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_lJ1F8LCHEeqVkqK74weuNQ" name="International Tennis Federation">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Gkd0QLCJEeqVkqK74weuNQ" annotatedElement="_lJ1F8LCHEeqVkqK74weuNQ">
+          <body>They have to accept the implementation of T-Groundair system, since everything related to tennis has to be accepted by this organization.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_lyZh0LCHEeqVkqK74weuNQ" name="Ball Boy">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_J7ASQLCJEeqVkqK74weuNQ" annotatedElement="_lyZh0LCHEeqVkqK74weuNQ">
+          <body>They will be a very interested part in this project, because they can give advice on how to improve the collection of balls, although on the other hand their position could be i</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_mj7FYLCHEeqVkqK74weuNQ" name="Parrot">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QG2wgLCJEeqVkqK74weuNQ" annotatedElement="_mj7FYLCHEeqVkqK74weuNQ">
+          <body>The company that markets the UAV will also be interested in the use that is given to the drone, because it can specialize a type of drone to the objective pursued in the project.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_naAY0LCHEeqVkqK74weuNQ" name="Pioneer">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_U_JVILCJEeqVkqK74weuNQ" annotatedElement="_naAY0LCHEeqVkqK74weuNQ">
+          <body>In the same way of the company of the UAV, the company that markets the UGV will be interested on this project.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_oEPBkLCHEeqVkqK74weuNQ" name="Software">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_XjikgLCJEeqVkqK74weuNQ" annotatedElement="_oEPBkLCHEeqVkqK74weuNQ">
+          <body>Different tools like Gazebo, GitHub, Microsoft or Linux will be used.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_owBwkLCHEeqVkqK74weuNQ" name="Referee organization">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_gHW_sLCJEeqVkqK74weuNQ" annotatedElement="_owBwkLCHEeqVkqK74weuNQ">
+          <body>If the system can be used in the future in matches, it could be a tool that helps referees.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_pmoBYLCHEeqVkqK74weuNQ" name="Spectators">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_xCDmQLCJEeqVkqK74weuNQ" annotatedElement="_pmoBYLCHEeqVkqK74weuNQ">
+          <body>Live games and trainings can be broadcast on Internet and the viewers can choose from which point of view watching the tennis (end of the court, center of the court or player-centered).</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_qaRr4LCHEeqVkqK74weuNQ" name="FEDDF">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zBH7ALCJEeqVkqK74weuNQ" annotatedElement="_qaRr4LCHEeqVkqK74weuNQ">
+          <body>People with disabilities will benefit from the advantages of this way of understanding sport.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_sNjnYLCHEeqVkqK74weuNQ" name="Actor19"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_t6V5ULCHEeqVkqK74weuNQ" name="Actor20"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_7JI14LCHEeqVkqK74weuNQ" name="Actor21"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_8FVYYLCHEeqVkqK74weuNQ" name="Actor22"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_84decLCHEeqVkqK74weuNQ" name="Actor23"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_rUi0YLCKEeqVkqK74weuNQ" name="Customers of other sports">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_utfGILCKEeqVkqK74weuNQ" annotatedElement="_rUi0YLCKEeqVkqK74weuNQ">
+          <body>Facing the future of the organization, it is thought to be able to expand the Market beyond tennis. Basketball players who train throws from the side of the court, when they train alone being continuously going to pick up the ball can be a problem and for this reason, they may be interested in our product adapting to this need.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_sWcWQLCKEeqVkqK74weuNQ" name="Government">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_0UQhYLCKEeqVkqK74weuNQ" annotatedElement="_sWcWQLCKEeqVkqK74weuNQ">
+          <body>They have no interest at the client level in this Project, but you have to take into account the laws about drones that are in the BOE when operating with them.</body>
+        </ownedComment>
+      </packagedElement>
+    </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_hMreoCpmEeqZ_MKDNlQ9FQ" name="Requirements">
       <packagedElement xmi:type="uml:Package" xmi:id="_M6gM4JU4EequrbVENDbY_Q" name="Functional requirements">
         <packagedElement xmi:type="uml:Package" xmi:id="_c6xykJU4EequrbVENDbY_Q" name="System"/>
