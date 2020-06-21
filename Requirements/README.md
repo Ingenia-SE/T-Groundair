@@ -2,7 +2,7 @@
 ## Requirements of the project
 Here are the requirements of entire system developed for the INGENIA-SE Drone Challenge 2019-2020.
 
-![Requirements layout](https://github.com/Ingenia-SE/T-Groundair/blob/master/requirements/requirements.png)
+![Requirements layout](https://github.com/Ingenia-SE/T-Groundair/blob/master/Requirements/requirements.png)
 
 
 The system requirements can be consulted both from the .pdf document and from the SySML model that has been developed.
