@@ -799,7 +799,51 @@ EXCEPT The UAV that should first GO HOME&#xD;
         </packagedElement>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_gHUZECpmEeqZ_MKDNlQ9FQ" name="Simulation"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_gHUZECpmEeqZ_MKDNlQ9FQ" name="Simulation">
+      <packagedElement xmi:type="uml:Class" xmi:id="_JNUXALJkEeqCp_gnMbVFWA" name="Support block"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Ja_moLJkEeqCp_gnMbVFWA" name="Dome"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0GGQMLJkEeqCp_gnMbVFWA" name="Environment">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_vKIXYLJiEeqCp_gnMbVFWA" name="Grass"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_LQvcwLJjEeqCp_gnMbVFWA" name="Pavement"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_LZ3jkLJjEeqCp_gnMbVFWA" name="College">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_HvkUsbJmEeqCp_gnMbVFWA" name="support block" type="_JNUXALJkEeqCp_gnMbVFWA" association="_HvZVkLJmEeqCp_gnMbVFWA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Hvk7wLJmEeqCp_gnMbVFWA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Hvk7wbJmEeqCp_gnMbVFWA" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Ikw3ULJmEeqCp_gnMbVFWA" name="dome" type="_Ja_moLJkEeqCp_gnMbVFWA" association="_IkvpMLJmEeqCp_gnMbVFWA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ikw3UbJmEeqCp_gnMbVFWA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ikw3UrJmEeqCp_gnMbVFWA" value="1"/>
+          </ownedAttribute>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_xQ6oQLJjEeqCp_gnMbVFWA" name="Pine tree"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_xi9agLJjEeqCp_gnMbVFWA" name="Oak tree"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_xbKJYLJjEeqCp_gnMbVFWA" name="Lamppost"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_Q1uIQLJjEeqCp_gnMbVFWA" name="Tennis court"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_m1Q20LJlEeqCp_gnMbVFWA" name="Walking person"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_HvZVkLJmEeqCp_gnMbVFWA" memberEnd="_HvkUsbJmEeqCp_gnMbVFWA _Hvk7wrJmEeqCp_gnMbVFWA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HvjtoLJmEeqCp_gnMbVFWA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HvkUsLJmEeqCp_gnMbVFWA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_Hvk7wrJmEeqCp_gnMbVFWA" name="college" type="_LZ3jkLJjEeqCp_gnMbVFWA" association="_HvZVkLJmEeqCp_gnMbVFWA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_IkvpMLJmEeqCp_gnMbVFWA" memberEnd="_Ikw3ULJmEeqCp_gnMbVFWA _Ikw3U7JmEeqCp_gnMbVFWA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IkwQQLJmEeqCp_gnMbVFWA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IkwQQbJmEeqCp_gnMbVFWA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_Ikw3U7JmEeqCp_gnMbVFWA" name="college" type="_LZ3jkLJjEeqCp_gnMbVFWA" association="_IkvpMLJmEeqCp_gnMbVFWA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="___0B8LOdEeqAB4Glc6RfRg" name="System">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_f_MW4LJlEeqCp_gnMbVFWA" name="Blue box"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_hrFQ8LJlEeqCp_gnMbVFWA" name="Red box"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_j55HULJkEeqCp_gnMbVFWA" name="Table"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_f5gbELJkEeqCp_gnMbVFWA" name="Computer"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_jrwksLJkEeqCp_gnMbVFWA" name="Pioneer 3at"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_jxIz8LJkEeqCp_gnMbVFWA" name="Bebop2"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_j7FaILJkEeqCp_gnMbVFWA" name="Tennis ball"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_pa3nILJlEeqCp_gnMbVFWA" name="Standing person"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_gw7WwCpmEeqZ_MKDNlQ9FQ" name="Stakeholders">
       <packagedElement xmi:type="uml:Actor" xmi:id="_SkBv0LCEEeqVkqK74weuNQ" name="Actor1" visibility="public"/>
       <packagedElement xmi:type="uml:Actor" xmi:id="_71AkwLCEEeqVkqK74weuNQ" name="Actor2"/>
@@ -1022,4 +1066,24 @@ EXCEPT The UAV that should first GO HOME&#xD;
   <Blocks:Block xmi:id="_lLhBb3aGEeqd2s108SnQXg" base_Class="_lLfzQHaGEeqd2s108SnQXg"/>
   <Blocks:Block xmi:id="_mYFiMHaGEeqd2s108SnQXg" base_Class="_mYCe4HaGEeqd2s108SnQXg"/>
   <Blocks:Block xmi:id="_og3zoHaGEeqd2s108SnQXg" base_Class="_ogy7IHaGEeqd2s108SnQXg"/>
+  <Blocks:Block xmi:id="_vKT9kLJiEeqCp_gnMbVFWA" base_Class="_vKIXYLJiEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_LQx5ALJjEeqCp_gnMbVFWA" base_Class="_LQvcwLJjEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_LZ5_0LJjEeqCp_gnMbVFWA" base_Class="_LZ3jkLJjEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_Q1v9dbJjEeqCp_gnMbVFWA" base_Class="_Q1uIQLJjEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_xQ8dcLJjEeqCp_gnMbVFWA" base_Class="_xQ6oQLJjEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_xbL-kLJjEeqCp_gnMbVFWA" base_Class="_xbKJYLJjEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_xi_PsLJjEeqCp_gnMbVFWA" base_Class="_xi9agLJjEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_JNVlMbJkEeqCp_gnMbVFWA" base_Class="_JNUXALJkEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_JbBb0LJkEeqCp_gnMbVFWA" base_Class="_Ja_moLJkEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_f5kFcLJkEeqCp_gnMbVFWA" base_Class="_f5gbELJkEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_jr02ILJkEeqCp_gnMbVFWA" base_Class="_jrwksLJkEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_jxKCELJkEeqCp_gnMbVFWA" base_Class="_jxIz8LJkEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_j57jlbJkEeqCp_gnMbVFWA" base_Class="_j55HULJkEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_j7GoRbJkEeqCp_gnMbVFWA" base_Class="_j7FaILJkEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_0GIscLJkEeqCp_gnMbVFWA" base_Class="_0GGQMLJkEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_f_OMELJlEeqCp_gnMbVFWA" base_Class="_f_MW4LJlEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_hrHtMLJlEeqCp_gnMbVFWA" base_Class="_hrFQ8LJlEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_m1SsALJlEeqCp_gnMbVFWA" base_Class="_m1Q20LJlEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="_pa4ORLJlEeqCp_gnMbVFWA" base_Class="_pa3nILJlEeqCp_gnMbVFWA"/>
+  <Blocks:Block xmi:id="___6IkLOdEeqAB4Glc6RfRg" base_Class="___0B8LOdEeqAB4Glc6RfRg"/>
 </xmi:XMI>
